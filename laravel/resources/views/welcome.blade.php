@@ -111,7 +111,7 @@
             <li class="list-inline-item mx-4"><a class="bi bi-instagram"></a> Instagram</li>
         </ul>
         </div>
-    </footer>
+    </footer> 
     <script src="js/bootstrap.js"></script>
 </body>
 </html>
