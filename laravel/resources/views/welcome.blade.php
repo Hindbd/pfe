@@ -104,22 +104,26 @@
         </div>
     </section>
     <footer id="about us" class="bg-dark text-light text-center text-sm-start py-5">
-        <div class="footer"  style="align-items: center;">
-        
-        <div class="container">
-        <ul class="list-unstyled ms-auto">
-            <li class=" mx-4 mb-4"><a class="bi bi-facebook"></a> Facebook</li>
-            <li class=" mx-4 mb-4"><a class="bi bi-twitter"></a> Twitter</li>
-            <li class=" mx-4 mb-4"><a class="bi bi-instagram"></a> Instagram</li>
-        </ul>
-        <ul class="list-unstyled center mx-auto">
-            <li class=" mx-4 mb-4"><a class="bi bi-linkedin"></a> Linkedn</li>
-            <li class=" mx-4 mb-4"><a class="bi bi-envelope"></a> Email</li>
-            <li class=" mx-4 mb-4"><a class="bi bi-geo-alt"></a> Map</li>
+         <div class="footer"  style="align-items: center;">
+            <div class="container">
+                <ul class=" row list-unstyled ms-auto">
+                    <li class="column mx-4 mb-4"><a class="bi bi-facebook"></a> Facebook</li>
+                    <li class=" column mx-4 mb-4"><a class="bi bi-twitter"></a> Twitter</li>
+                    <li class=" column mx-4 mb-4"><a class="bi bi-instagram"></a> Instagram</li>
+                </ul>
+                <ul class=" row list-unstyled mx-auto"  >
+                    <li class=" column mx-4 mb-4"><a class="bi bi-linkedin"></a> Linkedn</li>
+                    <li class=" column mx-4 mb-4"><a class="bi bi-envelope"></a> Email</li>
+                    <li class=" column mx-4 mb-4"><a class="bi bi-geo-alt"></a> Map</li>
+                    <img src="" class="" alt="" >
+
     
-        </ul>
-        </div>
-        </div>
+                </ul>
+            </div>
+        </div> 
+  </div>
+</div>
+
     </footer> 
     <script src="js/bootstrap.js"></script>
 </body>
