@@ -104,17 +104,21 @@
         </div>
     </section>
     <footer id="about us" class="bg-dark text-light text-center text-sm-start py-5">
-         <div class="footer"  style="align-items: center;">
-            <div class="container">
-                <ul class=" row list-unstyled ms-auto">
-                    <li class="column mx-4 mb-4"><a class="bi bi-facebook"></a> Facebook</li>
-                    <li class=" column mx-4 mb-4"><a class="bi bi-twitter"></a> Twitter</li>
-                    <li class=" column mx-4 mb-4"><a class="bi bi-instagram"></a> Instagram</li>
+         <!-- <div class="footer"  style="align-items: center;"> -->
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <img src="/img/logo3.png" alt="logo" style="background: transparent;  width: 200px; height: 100px;">
+                    </div>
+                <ul class=" nav list-unstyled ms-auto">
+                    <li class="nav-item mx-4 mb-2"><a class="bi bi-facebook"></a> Facebook</li>
+                    <li class=" nav-item mx-4 mb-2"><a class="bi bi-twitter"></a> Twitter</li>
+                    <li class=" nav-item mx-4 mb-2"><a class="bi bi-instagram"></a> Instagram</li>
                 </ul>
-                <ul class=" row list-unstyled mx-auto"  >
-                    <li class=" column mx-4 mb-4"><a class="bi bi-linkedin"></a> Linkedn</li>
-                    <li class=" column mx-4 mb-4"><a class="bi bi-envelope"></a> Email</li>
-                    <li class=" column mx-4 mb-4"><a class="bi bi-geo-alt"></a> Map</li>
+                <ul class=" nav list-unstyled mx-auto"  >
+                    <li class=" nav-item mx-4 mb-2"><a class="bi bi-linkedin"></a> Linkedn</li>
+                    <li class=" nav-item mx-4 mb-2"><a class="bi bi-envelope"></a> Email</li>
+                    <li class=" nav-item mx-4 mb-2"><a class="bi bi-geo-alt"></a> Map</li>
                     <img src="" class="" alt="" >
 
     
@@ -123,7 +127,7 @@
         </div> 
   </div>
 </div>
-
+    </nav>
     </footer> 
     <script src="js/bootstrap.js"></script>
 </body>
