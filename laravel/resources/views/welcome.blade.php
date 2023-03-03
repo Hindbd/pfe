@@ -105,31 +105,33 @@
         </div>
     </section>
     <footer id="about us" class="bg-dark text-light text-center text-sm-start py-5">
-         <!-- <div class="footer"  style="align-items: center;"> -->
+         <!-- <div class="footer align-items-center"> -->
             <nav class="navbar">
                 <div class="container">
                  <!-- @yield("content"); -->
-                 <div class="navbar-brand">
+                    <div class="navbar-brand">
                         <img src="/img/logo11.png" alt="logo" style="background: transparent;  width: 200px; height: 100px;">
-                    </div>
-                <ul class=" nav list-unstyled ms-auto">
-                    <li class="nav-item mx-4 mb-2"><a class="bi bi-facebook"></a> Facebook</li>
-                    <li class=" nav-item mx-4 mb-2"><a class="bi bi-twitter"></a> Twitter</li>
-                    <li class=" nav-item mx-4 mb-2"><a class="bi bi-instagram"></a> Instagram</li>
-                </ul>
-                <ul class=" nav list-unstyled mx-auto"  >
-                    <li class=" nav-item mx-4 mb-2"><a class="bi bi-linkedin"></a> Linkedn</li>
-                    <li class=" nav-item mx-4 mb-2"><a class="bi bi-envelope"></a> Email</li>
-                    <li class=" nav-item mx-4 mb-2"><a class="bi bi-geo-alt"></a> Map</li>
-                    <img src="" class="" alt="" >
 
-    
-                </ul>
-            </div>
-        </div> 
-  </div>
+                    </div>
+                    <div>
+                        <div >
+                            <ul class=" nav list-unstyled ms-auto">
+                                <li class="nav-item mx-4 mb-2"><a class="bi bi-facebook text-decoration-none"><span class=" text-white"> Facebook</span></a> </li>
+                                <li class=" nav-item mx-4 mb-2"><a class="bi bi-twitter"></a> Twitter</li>
+                                <li class=" nav-item mx-4 mb-2"><a class="bi bi-instagram"></a> Instagram</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class=" nav list-unstyled mx-auto"  >
+                                <li class=" nav-item mx-4 mb-2"><a class="bi bi-linkedin"></a> Linkedn</li>
+                                <li class=" nav-item mx-4 mb-2"><a class="bi bi-envelope"></a> Email</li>
+                                <li class=" nav-item mx-4 mb-2"><a class="bi bi-geo-alt"></a> Map</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-    </nav>
+            </nav>
+        <!-- </div> -->
     </footer> 
     <script src="js/bootstrap.js"></script>
 </body>
