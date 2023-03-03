@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LabSIV Demo</title>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/css2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <style type="text/css">
         @media only screen and (min-width: 760px){
@@ -107,8 +108,9 @@
          <!-- <div class="footer"  style="align-items: center;"> -->
             <nav class="navbar">
                 <div class="container">
-                    <div class="navbar-brand">
-                        <img src="/img/logo3.png" alt="logo" style="background: transparent;  width: 200px; height: 100px;">
+                 <!-- @yield("content"); -->
+                 <div class="navbar-brand">
+                        <img src="/img/logo11.png" alt="logo" style="background: transparent;  width: 200px; height: 100px;">
                     </div>
                 <ul class=" nav list-unstyled ms-auto">
                     <li class="nav-item mx-4 mb-2"><a class="bi bi-facebook"></a> Facebook</li>
@@ -126,7 +128,7 @@
             </div>
         </div> 
   </div>
-</div>
+                </div>
     </nav>
     </footer> 
     <script src="js/bootstrap.js"></script>
