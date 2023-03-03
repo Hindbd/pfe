@@ -113,8 +113,8 @@
                         <img src="/img/logo11.png" alt="logo" style="background: transparent;  width: 200px; height: 100px;">
 
                     </div>
-                    <div>
-                        <div >
+                    <div class="justify-content-center">
+                        <div  >
                             <ul class=" nav list-unstyled ms-auto">
                                 <li class="nav-item mx-4 mb-2"><a class="bi bi-facebook text-decoration-none"><span class=" text-white"> Facebook</span></a> </li>
                                 <li class=" nav-item mx-4 mb-2"><a class="bi bi-twitter"></a> Twitter</li>
