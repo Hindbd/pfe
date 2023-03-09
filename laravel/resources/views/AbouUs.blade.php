@@ -1,4 +1,6 @@
-<!-- @extends('welcome') -->
-<!-- @section('content') -->
+<!-- @extends('welcome') 
 
-<!-- @endsection -->
+@section('content')
+<p>hi</p>
+ @endsection -->
+ <p>hi</p>
