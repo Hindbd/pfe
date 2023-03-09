@@ -105,7 +105,6 @@
         </div>
     </section>
     <footer id="about us" class="bg-dark text-light text-center text-sm-start py-5">
-    <!-- @include('AbouUs') -->
     <a id="bottom"></a>
          <!-- <div class="footer align-items-center"> -->
             <nav class="navbar">
