@@ -18,7 +18,9 @@
 </head>
 <body>
     <header>
+    <a id="top"></a>
         <div class="top-nav d-none d-md-block bg-dark text-end">
+            <a href="#"><i class="bi bi-translate"></i></a>
             <a href="#" class="login-link text-white text-decoration-none">Login</a>
             <a href="#" class="login-link text-white text-decoration-none p-4">Register</a>
         </div>
@@ -110,11 +112,13 @@
             <nav class="navbar">
             <!-- <span class=" mx-4 mb-1"><p>About us :</p></span> -->
                 <div class="container mx-auto text-center">
-                    <div class="navbar-brand">
-                        <img src="/img/logo11.png" alt="logo" style="background: transparent;  width: 300px; height: 160px;">
-                        <img src="img/lab4.png" alt="logoLab "style ="background: transparent; width: 150px; height: 150px;">
+                    <div style="font-size:xx-large;">
+                    <a href="#top" class="nav-link "><i class="bi bi-arrow-up-circle"></i></a>
+                    
                     </div>
+
                     <div class="text-center ">
+                        <span class="nav-item mb-6" ><h4>Contact Us</h4></span>
                         <div >
                             <ul class=" nav list-unstyled ms-auto ">
                                 <li class="nav-item mx-4 mb-3"><a class="bi bi-facebook text-decoration-none"><span class=" text-white"> Facebook</span></a> </li>
@@ -129,6 +133,10 @@
                                 <li class=" nav-item mx-4 mb-2"><a class="bi bi-geo-alt"></a> Map</li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="navbar-brand">
+                        <img src="/img/logo11.png" alt="logo" style="background: transparent;  width: 300px; height: 160px;">
+                        <img src="img/lab4.png" alt="logoLab "style ="background: transparent; width: 150px; height: 150px;">
                     </div>
                 </div>
             </nav>
