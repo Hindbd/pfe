@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class pubs extends Model
 {
+    protected $table = 'pubs';
     use HasFactory;
+    protected $fillable = [
+        'id',
+        'nom',
+        'titre',
+        'contenu',
+
+    ];
 }
