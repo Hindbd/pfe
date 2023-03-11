@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/css2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <style type="text/css">
         @media only screen and (min-width: 760px){
             .nav-item:hover .dropdown-menu{
@@ -41,6 +42,7 @@
             padding: 10px 30px;
             cursor: pointer;
             color: black;
+            padding-left: 33px;
             background: transparent;
             border: 0;
             outline: none;
@@ -80,7 +82,7 @@
         .spaan{
             color: #777;
             font-size: 13px;
-            bottom: 102px;
+            bottom: 126px;
             position: absolute;
         }
         #login{left: 50px;}
@@ -95,6 +97,30 @@
         .credits{
             margin-left: 550px;
         }
+        .menu{
+            font-weight: 900;
+            font-size: 20;
+        }
+        .account1{
+            position: relative;
+            margin-left: 115px;
+        }
+        .account2{
+            position: relative;
+            margin-left: 126px;
+        }
+        .modal-dialog {
+            max-height: 80vh;
+        }
+        .modal-body {
+            overflow-y: auto;
+        }
+        .modal{
+            overflow: hidden;
+        }
+        .contact{
+            text-shadow: 0px 1px 3px white;
+        }
     </style>
 </head>
 <body>
@@ -102,11 +128,11 @@
         <div class="top-nav d-none d-md-block bg-dark justify-content-center">
             <div class="text-end">
                 <button class="btn btn-outline-none text-white text-decoration-none" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" onclick="login()">Login</button>
-                <button class="btn btn-outline-none text-white text-decoration-none" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" onclick="apply()">Apply</button>
+                <button class="btn btn-outline-none text-white text-decoration-none" id="applyBtn" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" onclick="apply()">Apply</button>
             </div>
             <!-- tabbed modal -->
             <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-body">
                             <!-- Nav tabs -->
@@ -114,10 +140,10 @@
                                 <div id="butt"></div>
                                 <ul class="nav" id="loginTabs" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link active tabbed" id="signInTab" data-bs-toggle="tab" data-bs-target="#signIn" role="tab" type="button" aria-controls="signIn" aria-selected="true" onclick="login()">Login</button>
+                                        <button class="nav-link active tabbed" id="loginTab" data-bs-toggle="tab" data-bs-target="#signIn" role="tab" type="button" aria-controls="signIn" aria-selected="true" onclick="login()">Login</button>
                                     </li>
                                     <li class="nav-item mx-2" role="presentation">
-                                        <button class="nav-link tabbed" id="signUpTab" data-bs-toggle="tab" data-bs-target="#signUp" role="tab" type="button" aria-controls="signUp" aria-selected="false" onclick="apply()">Apply</button>
+                                        <button class="nav-link tabbed" id="applyTab" data-bs-toggle="tab" data-bs-target="#signUp" role="tab" type="button" aria-controls="signUp" aria-selected="false" onclick="apply()">Apply</button>
                                     </li>
                                 </ul>
                             </div>
@@ -125,7 +151,7 @@
                             <!-- Tab panes -->
                             <div class="tab-content">
                                 <!-- login pane -->
-                                <div class="tab-pane fade show active" id="signIn" role="tabpanel" aria-labelledby="signInTab">
+                                <div class="tab-pane fade show active" id="signIn" role="tabpanel" aria-labelledby="loginTab">
                                     <form id="login">
                                         <div class="mb-3">
                                             <label for="signInEmail" class="form-label fw-semibold" required>Email address</label>
@@ -137,24 +163,60 @@
                                             <input type="checkbox" class="check"><span class="spaan">Remember me</span>
                                         </div>
                                         <button type="submit" class="btn btns">Login</button>
+                                        <span class="text-center account1">You don't have an account?<a class="text-decoration-none text-primary" href="#" onclick="apply()"> Apply</a></span>
                                     </form>
                                 </div>
                                 <!-- apply pane -->
-                                <div class="tab-pane fade" id="signUp" role="tabpanel" aria-labelledby="signUpTab">
+                                <div class="tab-pane fade" id="signUp" role="tabpanel" aria-labelledby="applyTab">
                                     <form id="apply">
                                         <div class="mb-3">
-                                            <label for="signUpName" class="form-label flex-semibold" required>Username</label>
-                                            <input type="text" class="form-control" id="signUpName" placeholder="Enter name">
+                                            <label for="firstName" class="form-label flex-semibold" required>First Name</label>
+                                            <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="signUpEmail" class="form-label fw-semibold" required>Email address</label>
-                                            <input type="email" class="form-control" id="signUpEmail" placeholder="Enter email">
+                                            <label for="lastName" class="form-label flex-semibold" required>Last Name</label>
+                                            <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="signUpPassword" class="form-label fw-semibold" required>Password</label>
-                                            <input type="password" class="form-control" id="signUpPassword" placeholder="Enter password">
+                                            <label for="bday" class="form-label flex-semibold" required>Date Of Birth</label>
+                                            <input type="datetime" class="form-control" id="bday" placeholder="Enter birth date">
                                         </div>
-                                        <button type="submit" class="btn btns">Apply</button>
+                                        <div class="row">
+                                            <div class=" col-6">
+                                                <label for="supervisor" class="form-label flex-semibold" required>Supervisor</label>
+                                                <select id="encadrants" class="form-select" placeholder="Choose">
+                                                    <option value="1" selected>option 1</option>
+                                                    <option value="2">option 2</option>
+                                                    <option value="3">option 3</option>
+                                                    <option value="4">option 4</option>
+                                                    <option value="5">option 5</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-6 mb-3">
+                                                <label for="co-supervisor" class="form-label flex-semibold" required>Co-supervisor(optional)</label>
+                                                <select id="co-encadrants" class="form-select" >
+                                                    <option value="1" selected>option 1</option>
+                                                    <option value="2">option 2</option>
+                                                    <option value="3">option 3</option>
+                                                    <option value="4">option 4</option>
+                                                    <option value="5">option 5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="applyEmail" class="form-label fw-semibold" required>Email address</label>
+                                            <input type="email" class="form-control" id="applyEmail" placeholder="Enter email">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="applyPassword" class="form-label fw-semibold" required>Password</label>
+                                            <input type="password" class="form-control" id="applyPassword" placeholder="Enter password">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="applyPassword" class="form-label fw-semibold" required>Confirm Password</label>
+                                            <input type="password" class="form-control" id="applyPassword" placeholder="Confirm password">
+                                        </div>
+                                        <button type="submit" class="btn btns">Apply</button>                                        
+                                        <span class="text-center account2">Already got an account?<a class="text-decoration-none text-primary" href="#" onclick="apply()"> Login</a></span>
                                     </form>
                                 </div>
                             </div>
@@ -172,7 +234,7 @@
                     <!-- <span class="navbar-toggler-icon"></span> -->
                 </button>
                 <div class="collapse navbar-collapse" id="mainmenu">
-                    <ul class="navbar-nav ms-auto fw-bold">
+                    <ul class="navbar-nav ms-auto menu">
                         <li class="nav-item"><a href="#" class="nav-link ">Home</a></li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#menu1" aria-expanded="false" aria-controls="menu1">Recherche</a>
@@ -242,7 +304,7 @@
             </div>
         </div>
     </section>
-    <section id="les articles" class="">
+    <section id="articles" class="">
         <div class="container-lg bg-white "  style="height: 700px;">
         </div>
     </section>
@@ -256,7 +318,7 @@
                             <a href="#top" class="nav-link arrow"><i class="bi bi-arrow-up-circle"></i></a>
                         </div>
                         <div class="container text-center col-lg-6 ">
-                            <span class="nav-item mb-6" ><h4>Contact Us</h4></span>
+                            <span class="nav-item mb-6 contact" ><h4>Contact Us</h4></span>
                             <div class="row social">
                                 <div class="col-sm-4">
                                     <ul class=" nav list-unstyled ms-auto ">
@@ -286,9 +348,14 @@
                 </nav>
             <!-- </div> -->
             <span class="credits">Created by F&H. &copy; 2023</span>
-        </footer>
+    </footer>
+    
+    <!-- bootstrap JS -->
     <script src="/js/bootstrap.js"></script>
+    <!-- flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
+        //for the login/apply tabs transition
         var x = document.getElementById("login");
         var y = document.getElementById("apply");
         var z = document.getElementById("butt");
@@ -303,6 +370,35 @@
             y.style.left = "450px";
             z.style.left = "0px";
         }
+
+        //for accessing the apply tab
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the Apply button
+            var applyBtn = document.getElementById("applyBtn");
+          
+            // Add click event listener to the Apply button
+            applyBtn.addEventListener("click", function() {
+              // Get the Apply tab
+              var applyTab = document.getElementById("applyTab");
+          
+              // Activate the Apply tab
+              var tabTrigger = new bootstrap.Tab(applyTab);
+              tabTrigger.show();
+          
+              // Show the modal
+              var loginModal = document.getElementById("loginModal");
+              var loginModalInstance = new bootstrap.Modal(loginModal);
+              loginModalInstance.show();
+            });
+        });
+
+        //for the date of birth input
+        config = {
+            altInput: true,
+            altFormat: "F j, Y",
+            dateFormat: "d-m-Y",
+        }
+        flatpickr("input[type=datetime]", config); 
     </script>
 
 </body>
