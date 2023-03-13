@@ -17,10 +17,10 @@ class pubsFactory extends Factory
     public function definition(): array
     {
         return [
-            'nom' => fake()->text(),
-            'titre' => fake()->text(),
-            'contenu' => fake()->text(),
-            'timestamps' => fake()->date(),    
+            // 'nom' => fake()->text(),
+            // 'titre' => fake()->text(),
+            // 'contenu' => fake()->text(),
+            // 'timestamps' => fake()->date(),    
             //
         ];
     }
