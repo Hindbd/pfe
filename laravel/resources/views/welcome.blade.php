@@ -260,20 +260,20 @@
                             <div class="row social">
                                 <div class="col-sm-4">
                                     <ul class=" nav list-unstyled ms-auto ">
-                                        <li class="nav-item mx-4 mb-2"><a class="bi bi-facebook text-decoration-none" href="#"><span class=" text-white"> Facebook</span></a> </li>
-                                        <li class=" nav-item mx-4 mb-2"><a class="bi bi-instagram text-decoration-none" href="#"><span class=" text-white"> Instagram</span></a> </li>                                
+                                        <li class="nav-item mx-4 mb-2"><a class="bi bi-facebook text-decoration-none" href="/"><span class=" text-white"> Facebook</span></a> </li>
+                                        <li class=" nav-item mx-4 mb-2"><a class="bi bi-instagram text-decoration-none" href="/"><span class=" text-white"> Instagram</span></a> </li>                                
                                     </ul>
                                 </div>
                                 <div class="col-sm-4">
                                     <ul class=" nav list-unstyled mx-auto"  >
                                         <li class=" nav-item mx-4 mb-2"><a class="bi bi-geo-alt text-decoration-none" href="https://www.google.com/maps/place/Faculty+of+Science,+Ibn+Zohr/@30.4060235,-9.5543585,15z/data=!4m10!1m2!2m1!1sfaculte+de+sciences!3m6!1s0xdb3c82aa3d6fe31:0x8ef661d2ccb5a617!8m2!3d30.4060231!4d-9.5444022!15sChNmYWN1bHRlIGRlIHNjaWVuY2VzkgERcHVibGljX3VuaXZlcnNpdHngAQA!16s%2Fg%2F12156n8y" target="_blank"><span class=" text-white"> Map</span></a> </li>
-                                        <li class=" nav-item mx-4 mb-2"><a class="bi bi-envelope text-decoration-none" href="#"><span class=" text-white"> Email</span></a> </li>                            
+                                        <li class=" nav-item mx-4 mb-2"><a class="bi bi-envelope text-decoration-none" href="/"><span class=" text-white"> Email</span></a> </li>                            
                                     </ul>
                                 </div>
                                 <div class="col-sm-4">
                                     <ul class="nav list-unstyled mx-auto">
-                                        <li class=" nav-item mx-4 mb-2"><a class="bi bi-twitter text-decoration-none" href="#"><span class=" text-white"> Twitter</span></a> </li>
-                                        <li class=" nav-item mx-4 mb-2"><a class="bi bi-linkedin text-decoration-none" href="#"><span class=" text-white"> LinkedIn</span></a> </li>                                
+                                        <li class=" nav-item mx-4 mb-2"><a class="bi bi-twitter text-decoration-none" href="/"><span class=" text-white"> Twitter</span></a> </li>
+                                        <li class=" nav-item mx-4 mb-2"><a class="bi bi-linkedin text-decoration-none" href="/"><span class=" text-white"> LinkedIn</span></a> </li>                                
                                     </ul>
                                 </div>
                             </div>
