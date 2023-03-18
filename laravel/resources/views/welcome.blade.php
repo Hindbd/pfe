@@ -121,22 +121,41 @@
         .contact{
             text-shadow: 0px 1px 3px white;
         }
+        .top-right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 50px;
+        background-color: #333;
+        color: #fff;
+        padding: 0 20px;
+    }
+    .links a {
+        color: #fff;
+        text-decoration: none;
+        margin-right: 10px;
+        font-size: 16px;
+    }
+
+    .links a:hover {
+        color: cyan;
+    }
     </style>
 </head>
 <body>
     <header>
-        <div class="top-nav d-none d-md-block bg-dark justify-content-center">
+        <!-- <div class="top-nav d-none d-md-block bg-dark justify-content-center">
             <div class="text-end">
                 <button class="btn btn-outline-none text-white text-decoration-none" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" onclick="login()">Login</button>
                 <button class="btn btn-outline-none text-white text-decoration-none" id="applyBtn" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" onclick="apply()">Apply</button>
             </div>
             <!-- tabbed modal -->
-            <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+           <!-- <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-body">
                             <!-- Nav tabs -->
-                            <div class="btn-box">
+                           <!-- <div class="btn-box">
                                 <div id="butt"></div>
                                 <ul class="nav" id="loginTabs" role="tablist">
                                     <li class="nav-item" role="presentation">
@@ -149,9 +168,9 @@
                             </div>
                 
                             <!-- Tab panes -->
-                            <div class="tab-content">
+                           <!-- <div class="tab-content">
                                 <!-- login pane -->
-                                <div class="tab-pane fade show active" id="signIn" role="tabpanel" aria-labelledby="loginTab">
+                               <!-- <div class="tab-pane fade show active" id="signIn" role="tabpanel" aria-labelledby="loginTab">
                                     <form id="login">
                                         <div class="mb-3">
                                             <label for="signInEmail" class="form-label fw-semibold" required>Email address</label>
@@ -167,7 +186,7 @@
                                     </form>
                                 </div>
                                 <!-- apply pane -->
-                                <div class="tab-pane fade" id="signUp" role="tabpanel" aria-labelledby="applyTab">
+                              <!--  <div class="tab-pane fade" id="signUp" role="tabpanel" aria-labelledby="applyTab">
                                     <form id="apply">
                                         <div class="mb-3">
                                             <label for="firstName" class="form-label flex-semibold" required>First Name</label>
@@ -224,7 +243,17 @@
                     </div>
                 </div>
             </div>  
-        </div>
+        </div> -->
+        @if (Route::has('login') && Auth::check())
+                <div class="top-right links">
+                    <a href="{{ url('/home') }}">Dashboard</a>
+                </div>
+            @elseif (Route::has('login') && !Auth::check())
+                <div class="top-right links">
+                    <a href="{{ url('/login') }}">Login</a>
+                    <a href="{{ url('/register') }}">Register</a>
+                </div>
+            @endif
         <div class="navbar navbar-expand-md bg-light navbar-light text-dark">
             <div class="container">
                 <img src="/img/lab4.png" alt="logoLab" style ="background: transparent; width: 90px; height: 90px;">
