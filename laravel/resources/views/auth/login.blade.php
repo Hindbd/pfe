@@ -1,10 +1,17 @@
-<x-guest-layout>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<!-- <x-guest-layout> -->
     <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+    
+<x-auth-session-status class="mb-4" :status="session('status')" />
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
+        <div class="container"> 
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
@@ -43,5 +50,7 @@
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
+        </div>
     </form>
-</x-guest-layout>
+<!-- </x-guest-layout> -->
+</html>

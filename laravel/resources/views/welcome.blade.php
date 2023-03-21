@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/css2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> -->
     <style type="text/css">
         @media only screen and (min-width: 760px){
             .nav-item:hover .dropdown-menu{
@@ -149,12 +149,12 @@
                 <button class="btn btn-outline-none text-white text-decoration-none" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" onclick="login()">Login</button>
                 <button class="btn btn-outline-none text-white text-decoration-none" id="applyBtn" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" onclick="apply()">Apply</button>
             </div>
-            <!-- tabbed modal -->
+            <tabbed modal -->
            <!-- <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-body">
-                            <!-- Nav tabs -->
+                            < Nav tabs -->
                            <!-- <div class="btn-box">
                                 <div id="butt"></div>
                                 <ul class="nav" id="loginTabs" role="tablist">
@@ -167,9 +167,9 @@
                                 </ul>
                             </div>
                 
-                            <!-- Tab panes -->
+                            <Tab panes -->
                            <!-- <div class="tab-content">
-                                <!-- login pane -->
+                                <login pane -->
                                <!-- <div class="tab-pane fade show active" id="signIn" role="tabpanel" aria-labelledby="loginTab">
                                     <form id="login">
                                         <div class="mb-3">
@@ -185,7 +185,7 @@
                                         <span class="text-center account1">You don't have an account?<a class="text-decoration-none text-primary" href="#" onclick="apply()"> Apply</a></span>
                                     </form>
                                 </div>
-                                <!-- apply pane -->
+                                <apply pane -->
                               <!--  <div class="tab-pane fade" id="signUp" role="tabpanel" aria-labelledby="applyTab">
                                     <form id="apply">
                                         <div class="mb-3">
