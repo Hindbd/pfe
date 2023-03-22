@@ -1,0 +1,33 @@
+Route::post('/pubs', 'PubsController@store');
+
+public function store(Request $request)
+{
+    // validate the input data
+    $validatedData = $request->validate([
+        'title' => 'required|max:255',
+        'description' => 'required',
+    ]);
+
+    // insert the data into the "pubs" table
+    DB::table('pubs')->insert($validatedData);
+
+    return redirect('/')->with('success', 'Pub created successfully.');
+}
+
+
+
+Route::put('/pubs/{id}', 'PubsController@update');
+
+public function update(Request $request, $id)
+{
+    // validate the input data
+    $validatedData = $request->validate([
+        'title' => 'required|max:255',
+        'description' => 'required',
+    ]);
+
+    // update the data in the "pubs" table
+    DB::table('pubs')->where('id', $id)->update($validatedData);
+
+    return redirect('/')->with('success', 'Pub updated successfully.');
+}

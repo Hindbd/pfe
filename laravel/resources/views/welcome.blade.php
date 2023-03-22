@@ -334,9 +334,22 @@
         </div>
     </section>
     <section id="articles" class="">
-        <div class="container-lg bg-white "  style="height: 700px;">
-        </div>
+    <div>
+    <div class="card" style="width: 20rem;">
+            @foreach($posts as $post)
+            <div class="card-body">
+                <h5 class="card-title">{{$post->titre}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{$post->name}}</h6>
+                <p class="card-text">{{$post->contenu}}</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+            @endforeach
+    </div>
     </section>
+
+
+
     <footer id="about us" class="bg-dark text-light text-center text-sm-start py-1">
         <a id="bottom"></a>
              <!-- <div class="footer align-items-center"> -->
