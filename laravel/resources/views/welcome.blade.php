@@ -341,8 +341,8 @@
                 <h5 class="card-title">{{$post->titre}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">{{$post->name}}</h6>
                 <p class="card-text">{{$post->contenu}}</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                <a href="/" class="card-link">Card link</a>
+                <a href="/" class="card-link">Another link</a>
             </div>
             @endforeach
     </div>
