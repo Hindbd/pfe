@@ -253,7 +253,8 @@
                     <a href="{{ url('/login') }}">Login</a>
                     <a href="{{ url('/register') }}">Register</a>
                 </div>
-            @endif
+            @endif 
+            <!-- .. -->
         <div class="navbar navbar-expand-md bg-light navbar-light text-dark">
             <div class="container">
                 <img src="/img/lab4.png" alt="logoLab" style ="background: transparent; width: 90px; height: 90px;">
