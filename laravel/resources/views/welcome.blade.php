@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LabSIV Demo</title>
-    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
     <link rel="stylesheet" href="/css/css2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <style type="text/css">
         @media only screen and (min-width: 760px){
             .nav-item:hover .dropdown-menu{
@@ -89,7 +89,10 @@
         #apply{left: 450px;}
 
         .social{
-            margin-left: 50px;
+            margin-left: 150px;
+        }
+        .social-icon{
+            padding: 5px;
         }
         .arrow{
             padding-top: 22px;
@@ -120,26 +123,39 @@
         }
         .contact{
             text-shadow: 0px 1px 3px white;
+            margin-left: 130px;
+            border-radius: 30px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 50px;
+            padding-right: 50px;
+            font-size: x-large;
+            font-weight: 1000;
+            background: transparent;
+            border-color: whitesmoke;
         }
         .top-right {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        height: 50px;
-        background-color: #333;
-        color: #fff;
-        padding: 0 20px;
-    }
-    .links a {
-        color: #fff;
-        text-decoration: none;
-        margin-right: 10px;
-        font-size: 16px;
-    }
-
-    .links a:hover {
-        color: cyan;
-    }
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 50px;
+            background-color: #333;
+            color: #fff;
+            padding: 0 20px;
+        }
+        .links a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        .contact:hover{
+            background-color: #F9F6F5;
+            text-shadow: 0px 1px 3px black;
+        }
+        .links a:hover {
+            color: cyan;
+        }
     </style>
 </head>
 <body>
@@ -149,7 +165,7 @@
                 <button class="btn btn-outline-none text-white text-decoration-none" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" onclick="login()">Login</button>
                 <button class="btn btn-outline-none text-white text-decoration-none" id="applyBtn" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" onclick="apply()">Apply</button>
             </div>
-            <tabbed modal -->
+            < tabbed modal -->
            <!-- <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
@@ -167,9 +183,9 @@
                                 </ul>
                             </div>
                 
-                            <Tab panes -->
+                            < Tab panes -->
                            <!-- <div class="tab-content">
-                                <login pane -->
+                                <!- login pane -->
                                <!-- <div class="tab-pane fade show active" id="signIn" role="tabpanel" aria-labelledby="loginTab">
                                     <form id="login">
                                         <div class="mb-3">
@@ -185,7 +201,7 @@
                                         <span class="text-center account1">You don't have an account?<a class="text-decoration-none text-primary" href="#" onclick="apply()"> Apply</a></span>
                                     </form>
                                 </div>
-                                <apply pane -->
+                                <!- apply pane -->
                               <!--  <div class="tab-pane fade" id="signUp" role="tabpanel" aria-labelledby="applyTab">
                                     <form id="apply">
                                         <div class="mb-3">
@@ -253,11 +269,10 @@
                     <a href="{{ url('/login') }}">Login</a>
                     <a href="{{ url('/register') }}">Register</a>
                 </div>
-            @endif 
-            <!-- .. -->
+            @endif
         <div class="navbar navbar-expand-md bg-light navbar-light text-dark">
             <div class="container">
-                <img src="/img/lab4.png" alt="logoLab" style ="background: transparent; width: 90px; height: 90px;">
+                <img src="/public/img/lab4.png" alt="logoLab" style ="background: transparent; width: 90px; height: 90px;">
                 <a href="" class="navbar-brand fw-bold fs-1">LabSIV</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu">
                     <i class="bi bi-list"></i>
@@ -330,13 +345,12 @@
                         praesentium. Facere, eveniet repellendus?
                     </p>
                 </div>
-                <img src="/img/firmware.svg" class="img-fluid w-50" alt="" >
+                <img src="/public/img/firmware.svg" class="img-fluid w-50" alt="" >
             </div>
         </div>
     </section>
     <section id="articles" class="">
-    <div>
-    <div class="card" style="width: 20rem;">
+        <div class="card" style="width: 20rem;">
             @foreach($posts as $post)
             <div class="card-body">
                 <h5 class="card-title">{{$post->titre}}</h5>
@@ -346,11 +360,8 @@
                 <a href="/" class="card-link">Another link</a>
             </div>
             @endforeach
-    </div>
+        </div>
     </section>
-
-
-
     <footer id="about us" class="bg-dark text-light text-center text-sm-start py-1">
         <a id="bottom"></a>
              <!-- <div class="footer align-items-center"> -->
@@ -361,31 +372,47 @@
                             <a href="#top" class="nav-link arrow"><i class="bi bi-arrow-up-circle"></i></a>
                         </div>
                         <div class="container text-center col-lg-6 ">
-                            <span class="nav-item mb-6 contact" ><h4>Contact Us</h4></span>
+                            <!-- Button trigger modal -->
+                            <button class="nav-item mb-6 contact" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                            <h1>Contact Us</h1>
+                                        <form class="contactModal">
+                                            <div class="mb-3">
+                                                <label for="fullName" class="form-label flex-semibold text-black text-start" required>Full Name</label>
+                                                <input type="text" class="form-control" id="firstName" placeholder="Enter your full name" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="number" class="form-label flex-semibold text-black text-start" required>Phone Number</label>
+                                                <input type="text" class="form-control" id="lastName" placeholder="Enter your phone number">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="contactEmail" class="form-label fw-semibold text-black text-start" required>Email address</label>
+                                                <input type="email" class="form-control" id="applyEmail" placeholder="Enter email">
+                                            </div>
+                                           
+                                            <div class="">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row social">
-                                <div class="col-sm-4">
-                                    <ul class=" nav list-unstyled ms-auto ">
-                                        <li class="nav-item mx-4 mb-2"><a class="bi bi-facebook text-decoration-none" href="/"><span class=" text-white"> Facebook</span></a> </li>
-                                        <li class=" nav-item mx-4 mb-2"><a class="bi bi-instagram text-decoration-none" href="/"><span class=" text-white"> Instagram</span></a> </li>                                
-                                    </ul>
-                                </div>
-                                <div class="col-sm-4">
-                                    <ul class=" nav list-unstyled mx-auto"  >
-                                        <li class=" nav-item mx-4 mb-2"><a class="bi bi-geo-alt text-decoration-none" href="https://www.google.com/maps/place/Faculty+of+Science,+Ibn+Zohr/@30.4060235,-9.5543585,15z/data=!4m10!1m2!2m1!1sfaculte+de+sciences!3m6!1s0xdb3c82aa3d6fe31:0x8ef661d2ccb5a617!8m2!3d30.4060231!4d-9.5444022!15sChNmYWN1bHRlIGRlIHNjaWVuY2VzkgERcHVibGljX3VuaXZlcnNpdHngAQA!16s%2Fg%2F12156n8y" target="_blank"><span class=" text-white"> Map</span></a> </li>
-                                        <li class=" nav-item mx-4 mb-2"><a class="bi bi-envelope text-decoration-none" href="/"><span class=" text-white"> Email</span></a> </li>                            
-                                    </ul>
-                                </div>
-                                <div class="col-sm-4">
-                                    <ul class="nav list-unstyled mx-auto">
-                                        <li class=" nav-item mx-4 mb-2"><a class="bi bi-twitter text-decoration-none" href="/"><span class=" text-white"> Twitter</span></a> </li>
-                                        <li class=" nav-item mx-4 mb-2"><a class="bi bi-linkedin text-decoration-none" href="/"><span class=" text-white"> LinkedIn</span></a> </li>                                
-                                    </ul>
-                                </div>
+                                <ul class=" nav list-unstyled ms-auto" style="font-size:xx-large;">
+                                    <li class="nav-item mx-4 mb-2 social-icon"><a class="bi bi-facebook text-decoration-none text-white" href="/"></a></li>
+                                    <li class="nav-item mx-4 mb-2 social-icon"><a class="bi bi-geo-alt-fill text-decoration-none text-white" href="https://www.google.com/maps/place/Faculty+of+Science,+Ibn+Zohr/@30.4060235,-9.5543585,15z/data=!4m10!1m2!2m1!1sfaculte+de+sciences!3m6!1s0xdb3c82aa3d6fe31:0x8ef661d2ccb5a617!8m2!3d30.4060231!4d-9.5444022!15sChNmYWN1bHRlIGRlIHNjaWVuY2VzkgERcHVibGljX3VuaXZlcnNpdHngAQA!16s%2Fg%2F12156n8y" target="_blank"></a></li>
+                                    <li class="nav-item mx-4 mb-2 social-icon"><a class="bi bi-envelope-fill text-decoration-none text-white" href="/"></a></li>
+                                    <li class="nav-item mx-4 mb-2 social-icon"><a class="bi bi-linkedin text-decoration-none text-white" href="/"></a></li>                           
+                                </ul>
                             </div>
                         </div>
                         <div class="navbar-brand">
-                            <a href="http://www.fsa.ac.ma/" target="_blank"><img src="/img/logo11.png" alt="logo" style="background: transparent;  width: 300px; height: 160px;"></a>
-                            <img src="/img/lab4.png" alt="logoLab " style ="background: transparent; width: 150px; height: 150px;">
+                            <a href="http://www.fsa.ac.ma/" target="_blank"><img src="/public/img/logo11.png" alt="logo" style="background: transparent;  width: 300px; height: 160px;"></a>
+                            <img src="/public/img/lab4.png" alt="logoLab " style ="background: transparent; width: 150px; height: 150px;">
                         </div>
                     </div>
                 </nav>
@@ -394,54 +421,54 @@
     </footer>
     
     <!-- bootstrap JS -->
-    <script src="/js/bootstrap.js"></script>
+    <script src="/public/js/bootstrap.js"></script>
     <!-- flatpickr JS -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
         //for the login/apply tabs transition
-        var x = document.getElementById("login");
-        var y = document.getElementById("apply");
-        var z = document.getElementById("butt");
+        // var x = document.getElementById("login");
+        // var y = document.getElementById("apply");
+        // var z = document.getElementById("butt");
 
-        function apply(){
-            x.style.left = "-400px";
-            y.style.left = "50px";
-            z.style.left = "110px";
-        }
-        function login(){
-            x.style.left = "50px";
-            y.style.left = "450px";
-            z.style.left = "0px";
-        }
+        // function apply(){
+        //     x.style.left = "-400px";
+        //     y.style.left = "50px";
+        //     z.style.left = "110px";
+        // }
+        // function login(){
+        //     x.style.left = "50px";
+        //     y.style.left = "450px";
+        //     z.style.left = "0px";
+        // }
 
-        //for accessing the apply tab
-        document.addEventListener("DOMContentLoaded", function() {
-            // Get the Apply button
-            var applyBtn = document.getElementById("applyBtn");
+        // //for accessing the apply tab
+        // document.addEventListener("DOMContentLoaded", function() {
+        //     // Get the Apply button
+        //     var applyBtn = document.getElementById("applyBtn");
           
-            // Add click event listener to the Apply button
-            applyBtn.addEventListener("click", function() {
-              // Get the Apply tab
-              var applyTab = document.getElementById("applyTab");
+        //     // Add click event listener to the Apply button
+        //     applyBtn.addEventListener("click", function() {
+        //       // Get the Apply tab
+        //       var applyTab = document.getElementById("applyTab");
           
-              // Activate the Apply tab
-              var tabTrigger = new bootstrap.Tab(applyTab);
-              tabTrigger.show();
+        //       // Activate the Apply tab
+        //       var tabTrigger = new bootstrap.Tab(applyTab);
+        //       tabTrigger.show();
           
-              // Show the modal
-              var loginModal = document.getElementById("loginModal");
-              var loginModalInstance = new bootstrap.Modal(loginModal);
-              loginModalInstance.show();
-            });
-        });
+        //       // Show the modal
+        //       var loginModal = document.getElementById("loginModal");
+        //       var loginModalInstance = new bootstrap.Modal(loginModal);
+        //       loginModalInstance.show();
+        //     });
+        // });
 
-        //for the date of birth input
-        config = {
-            altInput: true,
-            altFormat: "F j, Y",
-            dateFormat: "d-m-Y",
-        }
-        flatpickr("input[type=datetime]", config); 
+        // //for the date of birth input
+        // config = {
+        //     altInput: true,
+        //     altFormat: "F j, Y",
+        //     dateFormat: "d-m-Y",
+        // }
+        // flatpickr("input[type=datetime]", config); 
     </script>
 
 </body>
