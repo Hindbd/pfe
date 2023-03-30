@@ -32,3 +32,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 //pubs route
  Route::get('/' , [pubscontroller::class, 'index']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

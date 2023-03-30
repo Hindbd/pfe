@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LabSIV Demo</title>
-    <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="/css/css2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -272,7 +272,7 @@
             @endif
         <div class="navbar navbar-expand-md bg-light navbar-light text-dark">
             <div class="container">
-                <img src="/public/img/lab4.png" alt="logoLab" style ="background: transparent; width: 90px; height: 90px;">
+                <img src="img/lab4.png" alt="logoLab" style ="background: transparent; width: 90px; height: 90px;">
                 <a href="" class="navbar-brand fw-bold fs-1">LabSIV</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu">
                     <i class="bi bi-list"></i>
@@ -345,7 +345,7 @@
                         praesentium. Facere, eveniet repellendus?
                     </p>
                 </div>
-                <img src="/public/img/firmware.svg" class="img-fluid w-50" alt="" >
+                <img src="img/firmware.svg" class="img-fluid w-50" alt="" >
             </div>
         </div>
     </section>
@@ -411,8 +411,8 @@
                             </div>
                         </div>
                         <div class="navbar-brand">
-                            <a href="http://www.fsa.ac.ma/" target="_blank"><img src="/public/img/logo11.png" alt="logo" style="background: transparent;  width: 300px; height: 160px;"></a>
-                            <img src="/public/img/lab4.png" alt="logoLab " style ="background: transparent; width: 150px; height: 150px;">
+                            <a href="http://www.fsa.ac.ma/" target="_blank"><img src="img/logo11.png" alt="logo" style="background: transparent;  width: 300px; height: 160px;"></a>
+                            <img src="img/lab4.png" alt="logoLab " style ="background: transparent; width: 150px; height: 150px;">
                         </div>
                     </div>
                 </nav>
@@ -421,7 +421,7 @@
     </footer>
     
     <!-- bootstrap JS -->
-    <script src="/public/js/bootstrap.js"></script>
+    <script src="js/bootstrap.js"></script>
     <!-- flatpickr JS -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
