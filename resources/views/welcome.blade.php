@@ -5,10 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LabSIV Demo</title>
-    <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/css2.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/css2.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- CodePen animations -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:200,400,800" />
+    <link rel="stylesheet" href="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/css/demo.css" />
+    <script src="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/EasePack.min.js"></script>
+    <script src="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/rAF.js"></script> 
+    <script src="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/TweenLite.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.22/vue.min.js"></script>
+
+    
     <style type="text/css">
         @media only screen and (min-width: 760px){
             .nav-item:hover .dropdown-menu{
@@ -48,7 +59,7 @@
             outline: none;
             position: relative;
         }
-        #butt {
+        #botona {
             top: 0;
             left: 0;
             position: absolute;
@@ -156,6 +167,83 @@
         .links a:hover {
             color: cyan;
         }
+
+        /* .home_bg{
+            background-image: url("/public/img/univ.jpg");
+            background-size: cover;
+            background-position: center ;
+            height: 600px;
+            transition: transform 0.5 ease;
+        }
+        .home_bg:hover{
+            transform: translateX(50px) translateY(50px);
+        } */
+
+        /* publications section */
+        #app {
+            margin-top: 50px;
+            margin-right: 50px;
+        }
+        .pub_sec {
+            align-items: center;
+            justify-content: center ;
+        }
+        .pt-1 {
+            padding-top: 5%;
+        }
+        #slider {
+            position: relative;
+            height: 25vw;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+        #slider [type="radio"] {
+            display: none;
+        }
+        #slider label {
+            margin: auto;
+            width: 20%;
+            border-radius: 4px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+        #slider label img {
+            width: 100%;
+        }
+        #s1:checked ~ #slide4, #s2:checked ~ #slide5,
+        #s3:checked ~ #slide1, #s4:checked ~ #slide2,
+        #s5:checked ~ #slide3 {
+            transform: translate3d(-120%, 0, -200px) rotateY(45deg);
+        }
+        #s1:checked ~ #slide5, #s2:checked ~ #slide1,
+        #s3:checked ~ #slide2, #s4:checked ~ #slide3,
+        #s5:checked ~ #slide4 {
+            transform: translate3d(-65%, 0, -100px) rotateY(45deg);
+        }
+        #s1:checked ~ #slide1, #s2:checked ~ #slide2,
+        #s3:checked ~ #slide3, #s4:checked ~ #slide4,
+        #s5:checked ~ #slide5 {
+            transform: translate3d(0, 0, 0);
+        }
+        #s1:checked ~ #slide2, #s2:checked ~ #slide3,
+        #s3:checked ~ #slide4, #s4:checked ~ #slide5,
+        #s5:checked ~ #slide1 {
+            transform: translate3d(65%, 0, -100px) rotateY(-45deg);
+        }
+        #s1:checked ~ #slide3, #s2:checked ~ #slide4,
+        #s3:checked ~ #slide5, #s4:checked ~ #slide1,
+        #s5:checked ~ #slide2 {
+            transform: translate3d(120%, 0, -200px) rotateY(-45deg);
+        }
+        #slider [type="radio"]:checked + label img {
+            box-shadow: -6px 1px 69px -14px rgba(0, 0, 0, 0.75);
+        }
+        #slider [type="radio"]:checked + label:nth-child(3) img {
+            box-shadow: 0px 1px 94px 0px rgba(0, 0, 0, 0.75);
+        }
     </style>
 </head>
 <body>
@@ -172,7 +260,7 @@
                         <div class="modal-body">
                             < Nav tabs -->
                            <!-- <div class="btn-box">
-                                <div id="butt"></div>
+                                <div id="botona"></div>
                                 <ul class="nav" id="loginTabs" role="tablist">
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link active tabbed" id="loginTab" data-bs-toggle="tab" data-bs-target="#signIn" role="tab" type="button" aria-controls="signIn" aria-selected="true" onclick="login()">Login</button>
@@ -262,7 +350,7 @@
         </div> -->
         @if (Route::has('login') && Auth::check())
                 <div class="top-right links">
-                    <a href="{{ url('/home') }}">Dashboard</a>
+                    <a href="{{ url('/index') }}">Dashboard</a>
                 </div>
             @elseif (Route::has('login') && !Auth::check())
                 <div class="top-right links">
@@ -272,7 +360,7 @@
             @endif
         <div class="navbar navbar-expand-md bg-light navbar-light text-dark">
             <div class="container">
-                <img src="/public/img/lab4.png" alt="logoLab" style ="background: transparent; width: 90px; height: 90px;">
+                <img src="img/lab4.png" alt="logoLab" style ="background: transparent; width: 90px; height: 90px;">
                 <a href="" class="navbar-brand fw-bold fs-1">LabSIV</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu">
                     <i class="bi bi-list"></i>
@@ -338,28 +426,44 @@
         <div class="container">
             <div class="d-sm-flex align-items-center">
                 <div class="py-3">
-                    <h1>What is <span class="text-info">LabSIV</span> ?</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum est nesciunt 
-                        nisi deserunt maiores qui ex, at libero et eos sed dolor voluptatem porro 
-                        dolorum eligendi officia nihil quasi alias culpa quo soluta possimus ipsa error 
-                        praesentium. Facere, eveniet repellendus?
+                    <h1><span class="text-info">LabSIV</span></h1>
+                    <p>Le Laboratoire des Systemes Informatiques & Vision (LabSIV) est une unité de recherche de la Faculté
+                    des Sciences d'Agadir de l'Université Ibn Zohr. Il est spécialisé dans les domaines de la recherche
+                    en systemes informatiques et regroupe des enseignants-chercheurs, des doctorants et des ingénieurs
+                    de recherche.
+                    Le LabSIV a pour mission de contribuer au developpement de la recherche scientifique et technologique 
+                    dans les domaines de l'informatique, en s'appuyant sur une expertise de pointe et des
+                    equipements de laboratoire. Les recherches menées au sein du laboratoire visent á répondre aux défis
+                    actuels et futurs dans ces domaines, en proposant des solutions innovantes et efficaces.
+                    Dans cet aperçu genéral, nous présenterons les objectifs de recherche du laboratoire, les équipes de
+                    recherche et leurs travaux, les axes de recherche et leurs applications, l'infrastructure et les equipements
+                    du laboratoire, ainsi que les partenariats et collaborations en cours. Nous aborderons egalement les
+                    publications, brevets et realisations du laboratoire, ainsi que les perspectives et projets futurs.
                     </p>
                 </div>
-                <img src="/public/img/firmware.svg" class="img-fluid w-50" alt="" >
+                <!-- <img src="img/firmware.svg" class="img-fluid w-50" alt="" > -->
             </div>
         </div>
     </section>
-    <section id="articles" class="">
-        <div class="card" style="width: 20rem;">
-            @foreach($posts as $post)
-            <div class="card-body">
-                <h5 class="card-title">{{$post->titre}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{$post->name}}</h6>
-                <p class="card-text">{{$post->contenu}}</p>
-                <a href="/" class="card-link">Card link</a>
-                <a href="/" class="card-link">Another link</a>
+    <section id="articles" class="pubs_sec">
+        <div id="app">
+            <div class="pusher pt-1">
+                <div class="ui center aligned vertical grid container">
+                    <section id="slider" class="row four column">
+                        <input type="radio" name="slider" v-for="(n, index) in 5" :id="'s' + n" :checked="n === 3">
+                        <label class="column" v-for="(n, index) in 5" :for="'s' + n" :id="'slide' + n">
+                        <div class="card" style="width: 21rem; height:20rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Read more</a>
+                            </div>
+                        </div>
+                        </label>
+                    </section>
+                </div>
             </div>
-            @endforeach
         </div>
     </section>
     <footer id="about us" class="bg-dark text-light text-center text-sm-start py-1">
@@ -381,12 +485,16 @@
                                             <h1>Contact Us</h1>
                                         <form class="contactModal">
                                             <div class="mb-3">
-                                                <label for="fullName" class="form-label flex-semibold text-black text-start" required>Full Name</label>
+                                                <label for="fullName" class="form-label fw-semibold text-black" required>Full Name</label>
                                                 <input type="text" class="form-control" id="firstName" placeholder="Enter your full name" required>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="number" class="form-label flex-semibold text-black text-start" required>Phone Number</label>
+                                                <label for="number" class="form-label fw-semibold text-black text-start" required>Phone Number</label>
                                                 <input type="text" class="form-control" id="lastName" placeholder="Enter your phone number">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="contactEmail" class="form-label fw-semibold text-black text-start" required>Email address</label>
+                                                <input type="email" class="form-control" id="applyEmail" placeholder="Enter email">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="contactEmail" class="form-label fw-semibold text-black text-start" required>Email address</label>
@@ -411,8 +519,8 @@
                             </div>
                         </div>
                         <div class="navbar-brand">
-                            <a href="http://www.fsa.ac.ma/" target="_blank"><img src="/public/img/logo11.png" alt="logo" style="background: transparent;  width: 300px; height: 160px;"></a>
-                            <img src="/public/img/lab4.png" alt="logoLab " style ="background: transparent; width: 150px; height: 150px;">
+                            <a href="http://www.fsa.ac.ma/" target="_blank"><img src="img/logo11.png" alt="logo" style="background: transparent;  width: 300px; height: 160px;"></a>
+                            <img src="img/lab4.png" alt="logoLab " style ="background: transparent; width: 150px; height: 150px;">
                         </div>
                     </div>
                 </nav>
@@ -421,14 +529,14 @@
     </footer>
     
     <!-- bootstrap JS -->
-    <script src="/public/js/bootstrap.js"></script>
+    <script src="js/bootstrap.js"></script>
     <!-- flatpickr JS -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
         //for the login/apply tabs transition
         // var x = document.getElementById("login");
         // var y = document.getElementById("apply");
-        // var z = document.getElementById("butt");
+        // var z = document.getElementById("botona");
 
         // function apply(){
         //     x.style.left = "-400px";
@@ -469,6 +577,12 @@
         //     dateFormat: "d-m-Y",
         // }
         // flatpickr("input[type=datetime]", config); 
+
+        //publications transition
+        
+        var vm = new Vue({
+            el: '#app'
+        });
     </script>
 
 </body>
