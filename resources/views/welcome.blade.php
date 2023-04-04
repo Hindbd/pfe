@@ -450,17 +450,19 @@
             <div class="pusher pt-1">
                 <div class="ui center aligned vertical grid container">
                     <section id="slider" class="row four column">
+                        @foreach($posts as $post)
                         <input type="radio" name="slider" v-for="(n, index) in 5" :id="'s' + n" :checked="n === 3">
                         <label class="column" v-for="(n, index) in 5" :for="'s' + n" :id="'slide' + n">
                         <div class="card" style="width: 21rem; height:30rem;">
                             <img src="img/logo4.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <div class="card-bcody">
+                                <h5 class="card-title">{{$post->titre}}</h5>
+                                <p class="card-text">{{$post->contenu}}</p>
                                 <a href="#" class="btn btn-primary">Read more</a>
                             </div>
                         </div>
                         </label>
+                        @endforeach
                     </section>
                 </div>
             </div>
