@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LabSIV Demo</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="/css/bootstrap.css">
+=======
+    <link rel="stylesheet" href="css/bootstrap.css">
+>>>>>>> a1f5ddf2d25b73d4b0ae85fb82f9b7197f575b94
     <link rel="stylesheet" href="/css/css2.css">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('css/css2.css') }}">
@@ -370,13 +374,13 @@
                     <ul class="navbar-nav ms-auto menu">
                         <li class="nav-item"><a href="#" class="nav-link ">Home</a></li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#menu1" aria-expanded="false" aria-controls="menu1">Recherche</a>
+                            <a class="nav-link" href="{{ url('/Recherche') }}" data-bs-toggle="collapse" data-bs-target="#menu1" aria-expanded="false" aria-controls="menu1">Recherche</a>
                             <ul class="dropdown-menu" id="menu1">
-                                <li><a href="#" class="dropdown-item">Intelligence Artificielle</a></li>
-                                <li><a href="#" class="dropdown-item">Sécurité Informatique</a></li>
-                                <li><a href="#" class="dropdown-item">Traitement d'images</a></li>
-                                <li><a href="#" class="dropdown-item">Systemes Embarqués</a></li>
-                                <li><a href="#" class="dropdown-item">Analyse De Données</a></li>
+                                <li><a href="{{ url('/Recherche') }}" class="dropdown-item" id="ai">Intelligence Artificielle</a></li>
+                                <li><a href="{{ url('/Recherche') }}" class="dropdown-item">Sécurité Informatique</a></li>
+                                <li><a href="{{ url('/Recherche') }}" class="dropdown-item">Traitement d'images</a></li>
+                                <li><a href="{{ url('/Recherche') }}" class="dropdown-item">Systemes Embarqués</a></li>
+                                <li><a href="{{ url('/Recherche') }}" class="dropdown-item">Analyse De Données</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">

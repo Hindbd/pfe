@@ -46,3 +46,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/index', function(){
     return view('index');
 });
+Route::get('/Recherche',function(){
+    return view('Recherche');
+});
+
