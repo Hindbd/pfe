@@ -5,11 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LabSIV Demo</title>
-<<<<<<< HEAD
     <link rel="stylesheet" href="/css/bootstrap.css">
-=======
-    <link rel="stylesheet" href="css/bootstrap.css">
->>>>>>> a1f5ddf2d25b73d4b0ae85fb82f9b7197f575b94
     <link rel="stylesheet" href="/css/css2.css">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('css/css2.css') }}">
@@ -188,9 +184,9 @@
             margin-top: 50px;
             margin-right: 50px;
         }
-        .pub_sec {
+        .pubs_sec {
             align-items: center;
-            justify-content: center ;
+            height: 520px;
         }
         .pt-1 {
             padding-top: 5%;
@@ -456,8 +452,8 @@
                     <section id="slider" class="row four column">
                         <input type="radio" name="slider" v-for="(n, index) in 5" :id="'s' + n" :checked="n === 3">
                         <label class="column" v-for="(n, index) in 5" :for="'s' + n" :id="'slide' + n">
-                        <div class="card" style="width: 21rem; height:20rem;">
-                            <img src="..." class="card-img-top" alt="...">
+                        <div class="card" style="width: 21rem; height:30rem;">
+                            <img src="img/logo4.jpeg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
