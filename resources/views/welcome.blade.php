@@ -350,7 +350,7 @@
         </div> -->
         @if (Route::has('login') && Auth::check())
                 <div class="top-right links">
-                    <a href="{{ url('/index') }}">Dashboard</a>
+                    <a href="{{ url('/index2') }}">Dashboard</a>
                 </div>
             @elseif (Route::has('login') && !Auth::check())
                 <div class="top-right links">
@@ -450,15 +450,15 @@
             <div class="pusher pt-1">
                 <div class="ui center aligned vertical grid container">
                     <section id="slider" class="row four column">
-                        @foreach($posts as $post)
                         <input type="radio" name="slider" v-for="(n, index) in 5" :id="'s' + n" :checked="n === 3">
+                        @foreach($posts as $post)
                         <label class="column" v-for="(n, index) in 5" :for="'s' + n" :id="'slide' + n">
                         <div class="card" style="width: 21rem; height:30rem;">
                             <img src="img/logo4.jpeg" class="card-img-top" alt="...">
                             <div class="card-bcody">
                                 <h5 class="card-title">{{$post->titre}}</h5>
                                 <p class="card-text">{{$post->contenu}}</p>
-                                <a href="#" class="btn btn-primary">Read more</a>
+                                <a href="/Publications" class="btn btn-primary">Read more</a>
                             </div>
                         </div>
                         </label>

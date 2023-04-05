@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\pubscontroller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
 
 
 /*
@@ -34,19 +35,27 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 //pubs route
  Route::get('/' , [pubscontroller::class, 'index']);
+ Route::get('/index2' , [HomeController::class, 'index']);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index2'])->name('home');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index2'])->name('home');
 
-Route::get('/index', function(){
-    return view('index');
-});
+
+// Route::get('/index2', function(){
+//     return view('index2');
+// });
 Route::get('/Recherche',function(){
     return view('Recherche');
 });
+Route::get('/Publications',function(){
+    return view('Publications');
+});
+// Route::get('/welcome',function(){
+//     return view('welcome');
+// });
 

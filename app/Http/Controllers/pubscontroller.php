@@ -13,5 +13,6 @@ class pubscontroller extends Controller
 {
     $posts = DB::table('pubs')->get();
     return view('welcome', ['posts' => $posts]);
+ 
 }
 }
