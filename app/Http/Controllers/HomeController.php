@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Models\pubs;
+
 
 class HomeController extends Controller
 {
@@ -29,8 +31,13 @@ class HomeController extends Controller
         
             //  $user = DB::table('users')->get();
             $user = Auth::user();
-             return view('index2', ['user' => $user]);
-         
+            $posts = DB::table('pubs')->get();
+            return view('index2', ['user' => $user,
+                                    'posts' => $posts
+                                ]
+    );
+            // return view('welcome', ['user' => $user]);
+
         
     }
 }

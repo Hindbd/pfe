@@ -36,6 +36,9 @@ require __DIR__.'/auth.php';
 //pubs route
  Route::get('/' , [pubscontroller::class, 'index']);
  Route::get('/index2' , [HomeController::class, 'index']);
+//  Route::get('/index2' , [pubscontroller::class, 'index']);
+//  Route::get('/' , [HomeController::class, 'index']);
+
 
 Auth::routes();
 
