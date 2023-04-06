@@ -15,9 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('statut');
+            $table->string('encadrant');
+            $table->string('co-encadrant1');
+            $table->string('co-encadrant2');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->string('img');
+            $table->string('role');
             $table->timestamps();
         });
     }
