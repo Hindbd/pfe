@@ -34,16 +34,18 @@ class RegisteredUserController extends Controller
             'prenom' => ['required', 'string', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'statut' => ['required', 'string', 'max:255'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'role' => ['required', 'string', 'max:255'],
+            'encadrant' =>['nullable', 'string', 'max:255'],
             'img' =>['nullable', 'string', 'max:255'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
-            'name' => $request->nom,
             'prenom' => $request->prenom,
+            'name' => $request->name,
             'email' => $request->email,
-            'statut'=>$request->statut,
+            'role'=>$request->role,
+            'encadrant'=>$request->encadrant,
             'img' => $request->img,
             'password' => Hash::make($request->password),
         ]);
