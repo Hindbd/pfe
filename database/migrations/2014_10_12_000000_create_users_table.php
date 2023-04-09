@@ -16,16 +16,19 @@ return new class extends Migration
             $table->string('prenom');
             $table->string('nom');
             $table->string('email')->unique();
-            $table->string('statut');
-            $table->string('encadrant');
-            $table->string('co-encadrant1');
-            $table->string('co-encadrant2');
+            $table->string('role'); 
+            $table->unsignedBigInteger('encadrant')->nullable()->default(null);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->string('img');
-            $table->string('role');
+            $table->string('img')->nullable()->default(null);;
             $table->timestamps();
+            $table->foreign('encadrant')
+                   ->references('id')
+                   ->on('users')
+                   ->onDelete('cascade')
+                   ->onUpdate('cascade');
+        
         });
     }
 

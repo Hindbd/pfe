@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row mb-3">
@@ -51,27 +51,16 @@
                                 @enderror
                             </div>
                         </div>
-                        <!-- <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Statut') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="statut" type="text" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('statut')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div> -->
                         <div class="row mb-3">
                             <label for="statut" class="col-md-4 col-form-label text-md-end">{{ __('Statut') }}</label>
 
                             <div class="col-md-6">
-                            <select>
-                                <option>Doctorant</option>
-                                <option>Partenaire</option>
-                                <option>Autre</option>
+                            <select id="role" name="role">
+                                <option value="Prof">Prof</option>
+                                <option value="Doctorant">Doctorant</option>
+                                <option value="Partenaire">Partenaire</option>
+                                <option value="Autre">Autre</option>
                             </select>
                                 @error('statut')
                                     <span class="invalid-feedback" role="alert">
@@ -80,41 +69,24 @@
                                 @enderror
                             </div>
                         </div>
+                        <div id="doctorant_only" style="display:none;"  >
+                            <div class="row mb-3">
+                                <label for="statut" class="col-md-4 col-form-label text-md-end">{{ __('Encadrant') }}</label>
 
-                        <div class="row mb-3">
-                            <label for="statut" class="col-md-4 col-form-label text-md-end">{{ __('Co-Encadrant1') }}</label>
-
-                            <div class="col-md-6">
-                            <select>
-                                <option>name1</option>
-                                <option>name2</option>
-                                <option>name3</option>
-                            </select>
-                                @error('encadrant')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <div class="col-md-6" >
+                                <select  name="encadrant">
+                                    <option value="1">koutti</option>
+                                    <option value="the_lord">afdel</option>
+                                    <option value="boulouz">boulouz</option>
+                                </select>
+                                    @error('encadrant')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="row mb-3">
-                            <label for="statut" class="col-md-4 col-form-label text-md-end">{{ __('Co-Encadrant2') }}</label>
-
-                            <div class="col-md-6">
-                            <select>
-                                <option>name1</option>
-                                <option>name2</option>
-                                <option>name3</option>
-                            </select>
-                                @error('encadrant')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
@@ -142,9 +114,20 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Add a picture') }}</label>
 
                             <div class="col-md-6">
-                                <input type="file" id="picture-upload" name="picture">
+                                <input type="file" id="img" name="img">
                             </div>
                         </div>
+                        <script>
+                                  $(document).on('change','#role',function() {
+                                    if($(role).val()=='Doctorant'){
+                                        $("#doctorant_only").show();
+                                    }
+                                    else{
+                                        $("#doctorant_only").hide();
+                                    }
+                                    });
+
+                        </script>
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
