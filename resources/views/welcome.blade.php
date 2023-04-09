@@ -350,7 +350,7 @@
         </div> -->
         @if (Route::has('login') && Auth::check())
                 <div class="top-right links">
-                    <a href="{{ url('/index2') }}">{{$user->name}}</a>
+                    <a href="{{ url('/index2') }}">you</a>
                 </div>
             @elseif (Route::has('login') && !Auth::check())
                 <div class="top-right links">
@@ -446,23 +446,26 @@
         </div>
     </section>
     <section id="articles" class="pubs_sec">
+        <h1></h1>
         <div id="app">
             <div class="pusher pt-1">
                 <div class="ui center aligned vertical grid container">
                     <section id="slider" class="row four column">
                         <input type="radio" name="slider" v-for="(n, index) in 5" :id="'s' + n" :checked="n === 3">
-                        @foreach($posts as $post)
-                        <label class="column" v-for="(n, index) in 5" :for="'s' + n" :id="'slide' + n">
-                        <div class="card" style="width: 21rem; height:30rem;">
-                            <img src="img/logo4.jpeg" class="card-img-top" alt="...">
-                            <div class="card-bcody">
-                                <h5 class="card-title">{{$post->titre}}</h5>
-                                <p class="card-text">{{$post->contenu}}</p>
-                                <a href="/Publications" class="btn btn-primary">Read more</a>
+                        @if(isset($posts))
+                            @foreach($posts as $post)
+                            <label class="column" v-for="(n, index) in 5" :for="'s' + n" :id="'slide' + n">
+                            <div class="card" style="width: 21rem; height:30rem;">
+                                <img src="img/logo4.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{$post->titre}}</h5>
+                                    <p class="card-text">{{$post->contenu}}</p>
+                                    <a href="/Publications" class="btn btn-primary">Read more</a>
+                                </div>
                             </div>
-                        </div>
-                        </label>
-                        @endforeach
+                            </label>
+                            @endforeach
+                        @endif
                     </section>
                 </div>
             </div>
