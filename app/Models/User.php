@@ -18,6 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'prenom',
         'name',
         'prenom',
         'email',
@@ -28,6 +29,7 @@ class User extends Authenticatable
         'encadrant',
         'co-encadrant1',
         'co-encadrant2',
+        'encadrant',
     ];
 
     /**

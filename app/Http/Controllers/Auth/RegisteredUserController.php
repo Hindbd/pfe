@@ -38,6 +38,7 @@ class RegisteredUserController extends Controller
             'encadrant' =>['nullable', 'string', 'max:255'],
             'img' =>['nullable', 'string', 'max:255'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+
         ]);
 
         $user = User::create([
