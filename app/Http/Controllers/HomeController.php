@@ -32,10 +32,9 @@ class HomeController extends Controller
             //  $user = DB::table('users')->get();
             $user = Auth::user();
             $posts = DB::table('pubs')->get();
-            return view('index2', ['user' => $user,
-                                    'posts' => $posts
-                                ]
-    );
+            // return view('welcome', ['posts' => $posts,
+            // 'user' => $user,]);
+        return view('welcome', ['user' => $user]);
             // return view('welcome', ['user' => $user]);
 
         
