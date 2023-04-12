@@ -165,8 +165,8 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../index3.html" class="brand-link">
-      <img src="../img/lab4.png" alt="LabSIV Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <a href="../index2.blade.php" class="brand-link">
+      <img src="../img/lab4.png" alt="LabSIV Logo" class="brand-image img-circle elevation-3" style="opacity: .8; font-size:x-large;">
       <span class="brand-text font-weight-light">LabSIV</span>
     </a>
     <!-- Sidebar -->
@@ -177,19 +177,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{$user->name}}</a>
-        </div>
-      </div>
-
-      <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
+          <a href="#" class="d-block">{{$user->prenom}} {{$user->name}}</a>
         </div>
       </div>
 
@@ -203,91 +191,19 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
-                <!-- <i class="right fas fa-angle-left"></i> -->
-              </p>
-            </a>
-            
-          </li>
-          <li class="nav-item">
-            <a href="pages/widgets.blade.php" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Widgets
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                Layout Options
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              
-              <li class="nav-item">
-                <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Collapsed Sidebar</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="pages/charts/chartjs.html" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
-              <p>
-                Charts
-                <!-- <i class="right fas fa-angle-left"></i> -->
-              </p>
-            </a>
-            
-          </li>
-          <li class="nav-item">
-            <a href="pages/UI/timeline.html" class="nav-link">
+            <a href="pages/UI/timeline.blade.php" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 Timeline
-                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
-            
           </li>
-          
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Tables
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>DataTables</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>jsGrid</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <!-- <li class="nav-header">EXAMPLES</li> -->
-          <li class="nav-item">
-            <a href="pages/calendar.html" class="nav-link">
+            <a href="pages/calendar.blade.php" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
                 Calendar
@@ -296,7 +212,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="pages/gallery.blade.php" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Gallery
@@ -304,7 +220,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/kanban.html" class="nav-link">
+            <a href="pages/kanban.blade.php" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Kanban Board
@@ -321,19 +237,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                <a href="pages/mailbox/mailbox.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inbox</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
+                <a href="pages/mailbox/compose.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Compose</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/mailbox/read-mail.html" class="nav-link">
+                <a href="pages/mailbox/read-mail.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Read</p>
                 </a>
@@ -341,7 +257,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/profile.html" class="nav-link">
+            <a href="pages/examples/profile.blade.php" class="nav-link">
               <i class="far fa-user nav-icon"></i>
               <p>
                 Profile
@@ -349,7 +265,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/projects.html" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="bi far bi-kanban nav-icon"></i>
               <p>Projects
                 <i class="fas fa-angle-left right"></i>
@@ -357,19 +273,25 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/examples/project-add.html" class="nav-link">
+                <a href="pages/examples/projects.blade.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/examples/project-add.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Project Add</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/project-edit.html" class="nav-link">
+                <a href="pages/examples/project-edit.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Project Edit</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/project-detail.html" class="nav-link">
+                <a href="pages/examples/project-detail.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Project Detail</p>
                 </a>
@@ -377,103 +299,16 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/contacts.html" class="nav-link">
+            <a href="pages/examples/contacts.blade.php" class="nav-link">
               <i class="far fa-address-book nav-icon"></i>
               <p>Contacts</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/contact-us.html" class="nav-link">
+            <a href="pages/examples/contact-us.blade.php" class="nav-link">
               <i class="far fa-address-card nav-icon"></i>
               <p>Contact us</p>
             </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-plus-square"></i>
-              <p>
-                Extras
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>
-                    Login & Register v1
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="pages/examples/login.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Login v1</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/examples/register.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Register v1</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/examples/forgot-password.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Forgot Password v1</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/examples/recover-password.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Recover Password v1</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>
-                    Login & Register v2
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="pages/examples/login-v2.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Login v2</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/examples/register-v2.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Register v2</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/examples/forgot-password-v2.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Forgot Password v2</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/examples/recover-password-v2.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Recover Password v2</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/lockscreen.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Lockscreen</p>
-                </a>
-              </li>
-            </ul>
           </li>
         </ul>
       </nav>
@@ -489,12 +324,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard v2</h1>
+            <h1 class="m-0">Dashboard</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v2</li>
+              <li class="breadcrumb-item active">Dashboard</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -528,8 +363,8 @@
               <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Likes</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-text">Publications</span>
+                <span class="info-box-number">410</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -545,8 +380,8 @@
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Sales</span>
-                <span class="info-box-number">760</span>
+                <span class="info-box-text">Projets</span>
+                <span class="info-box-number">17</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -558,8 +393,8 @@
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">New Members</span>
-                <span class="info-box-number">2,000</span>
+                <span class="info-box-text">Membres</span>
+                <span class="info-box-number">20</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -657,46 +492,7 @@
                 <!-- /.row -->
               </div>
               <!-- ./card-body -->
-              <div class="card-footer">
-                <div class="row">
-                  <div class="col-sm-3 col-6">
-                    <div class="description-block border-right">
-                      <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
-                      <h5 class="description-header">$35,210.43</h5>
-                      <span class="description-text">TOTAL REVENUE</span>
-                    </div>
-                    <!-- /.description-block -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-sm-3 col-6">
-                    <div class="description-block border-right">
-                      <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
-                      <h5 class="description-header">$10,390.90</h5>
-                      <span class="description-text">TOTAL COST</span>
-                    </div>
-                    <!-- /.description-block -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-sm-3 col-6">
-                    <div class="description-block border-right">
-                      <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span>
-                      <h5 class="description-header">$24,813.53</h5>
-                      <span class="description-text">TOTAL PROFIT</span>
-                    </div>
-                    <!-- /.description-block -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-sm-3 col-6">
-                    <div class="description-block">
-                      <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
-                      <h5 class="description-header">1200</h5>
-                      <span class="description-text">GOAL COMPLETIONS</span>
-                    </div>
-                    <!-- /.description-block -->
-                  </div>
-                </div>
-                <!-- /.row -->
-              </div>
+              
               <!-- /.card-footer -->
             </div>
             <!-- /.card -->
@@ -709,261 +505,9 @@
         <div class="row">
           <!-- Left col -->
           <div class="col-md-8">
-            <!-- MAP & BOX PANE -->
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">US-Visitors Report</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="d-md-flex">
-                  <div class="p-1 flex-fill" style="overflow: hidden">
-                    <!-- Map will be created here -->
-                    <div id="world-map-markers" style="height: 325px; overflow: hidden">
-                      <div class="map"></div>
-                    </div>
-                  </div>
-                  <div class="card-pane-right bg-success pt-2 pb-2 pl-4 pr-4">
-                    <div class="description-block mb-4">
-                      <div class="sparkbar pad" data-color="#fff">90,70,90,70,75,80,70</div>
-                      <h5 class="description-header">8390</h5>
-                      <span class="description-text">Visits</span>
-                    </div>
-                    <!-- /.description-block -->
-                    <div class="description-block mb-4">
-                      <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div>
-                      <h5 class="description-header">30%</h5>
-                      <span class="description-text">Referrals</span>
-                    </div>
-                    <!-- /.description-block -->
-                    <div class="description-block">
-                      <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div>
-                      <h5 class="description-header">70%</h5>
-                      <span class="description-text">Organic</span>
-                    </div>
-                    <!-- /.description-block -->
-                  </div><!-- /.card-pane-right -->
-                </div><!-- /.d-md-flex -->
-              </div>
-              <!-- /.card-body -->
-            </div>
             <!-- /.card -->
             <div class="row">
-              <div class="col-md-6">
-                <!-- DIRECT CHAT -->
-                <div class="card direct-chat direct-chat-warning">
-                  <div class="card-header">
-                    <h3 class="card-title">Direct Chat</h3>
-
-                    <div class="card-tools">
-                      <span title="3 New Messages" class="badge badge-warning">3</span>
-                      <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                        <i class="fas fa-minus"></i>
-                      </button>
-                      <button type="button" class="btn btn-tool" title="Contacts" data-widget="chat-pane-toggle">
-                        <i class="fas fa-comments"></i>
-                      </button>
-                      <button type="button" class="btn btn-tool" data-card-widget="remove">
-                        <i class="fas fa-times"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body">
-                    <!-- Conversations are loaded here -->
-                    <div class="direct-chat-messages">
-                      <!-- Message. Default to the left -->
-                      <div class="direct-chat-msg">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-left">Alexander Pierce</span>
-                          <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
-                          Is this template really for free? That's unbelievable!
-                        </div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-
-                      <!-- Message to the right -->
-                      <div class="direct-chat-msg right">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-right">Sarah Bullock</span>
-                          <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
-                          You better believe it!
-                        </div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-
-                      <!-- Message. Default to the left -->
-                      <div class="direct-chat-msg">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-left">Alexander Pierce</span>
-                          <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
-                          Working with AdminLTE on a great new app! Wanna join?
-                        </div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-
-                      <!-- Message to the right -->
-                      <div class="direct-chat-msg right">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-right">Sarah Bullock</span>
-                          <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
-                          I would love to.
-                        </div>
-                        <!-- /.direct-chat-text -->
-                      </div>
-                      <!-- /.direct-chat-msg -->
-
-                    </div>
-                    <!--/.direct-chat-messages-->
-
-                    <!-- Contacts are loaded here -->
-                    <div class="direct-chat-contacts">
-                      <ul class="contacts-list">
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="dist/img/user1-128x128.jpg" alt="User Avatar">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Count Dracula
-                                <small class="contacts-list-date float-right">2/28/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">How have you been? I was...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="dist/img/user7-128x128.jpg" alt="User Avatar">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Sarah Doe
-                                <small class="contacts-list-date float-right">2/23/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">I will be waiting for...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="dist/img/user3-128x128.jpg" alt="User Avatar">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Nadia Jolie
-                                <small class="contacts-list-date float-right">2/20/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">I'll call you back at...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="dist/img/user5-128x128.jpg" alt="User Avatar">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Nora S. Vans
-                                <small class="contacts-list-date float-right">2/10/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">Where is your new...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="dist/img/user6-128x128.jpg" alt="User Avatar">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                John K.
-                                <small class="contacts-list-date float-right">1/27/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">Can I take a look at...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                        <li>
-                          <a href="#">
-                            <img class="contacts-list-img" src="dist/img/user8-128x128.jpg" alt="User Avatar">
-
-                            <div class="contacts-list-info">
-                              <span class="contacts-list-name">
-                                Kenneth M.
-                                <small class="contacts-list-date float-right">1/4/2015</small>
-                              </span>
-                              <span class="contacts-list-msg">Never mind I found...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                          </a>
-                        </li>
-                        <!-- End Contact Item -->
-                      </ul>
-                      <!-- /.contacts-list -->
-                    </div>
-                    <!-- /.direct-chat-pane -->
-                  </div>
-                  <!-- /.card-body -->
-                  <div class="card-footer">
-                    <form action="#" method="post">
-                      <div class="input-group">
-                        <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-                        <span class="input-group-append">
-                          <button type="button" class="btn btn-warning">Send</button>
-                        </span>
-                      </div>
-                    </form>
-                  </div>
-                  <!-- /.card-footer-->
-                </div>
-                <!--/.direct-chat -->
-              </div>
-              <!-- /.col -->
-
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <!-- USERS LIST -->
                 <div class="card">
                   <div class="card-header">
@@ -1040,8 +584,7 @@
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Latest Orders</h3>
-
+                <h3 class="card-title">Latest Publications</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -1057,8 +600,8 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
-                      <th>Order ID</th>
-                      <th>Item</th>
+                      <th>Publication ID</th>
+                      <th>Subject</th>
                       <th>Status</th>
                       <th>Popularity</th>
                     </tr>
@@ -1137,122 +680,11 @@
           <!-- /.col -->
 
           <div class="col-md-4">
-            <!-- Info Boxes Style 2 -->
-            <div class="info-box mb-3 bg-warning">
-              <span class="info-box-icon"><i class="fas fa-tag"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Inventory</span>
-                <span class="info-box-number">5,200</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-success">
-              <span class="info-box-icon"><i class="far fa-heart"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Mentions</span>
-                <span class="info-box-number">92,050</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-danger">
-              <span class="info-box-icon"><i class="fas fa-cloud-download-alt"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Downloads</span>
-                <span class="info-box-number">114,381</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-            <div class="info-box mb-3 bg-info">
-              <span class="info-box-icon"><i class="far fa-comment"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Direct Messages</span>
-                <span class="info-box-number">163,921</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Browser Usage</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-8">
-                    <div class="chart-responsive">
-                      <canvas id="pieChart" height="150"></canvas>
-                    </div>
-                    <!-- ./chart-responsive -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-md-4">
-                    <ul class="chart-legend clearfix">
-                      <li><i class="far fa-circle text-danger"></i> Chrome</li>
-                      <li><i class="far fa-circle text-success"></i> IE</li>
-                      <li><i class="far fa-circle text-warning"></i> FireFox</li>
-                      <li><i class="far fa-circle text-info"></i> Safari</li>
-                      <li><i class="far fa-circle text-primary"></i> Opera</li>
-                      <li><i class="far fa-circle text-secondary"></i> Navigator</li>
-                    </ul>
-                  </div>
-                  <!-- /.col -->
-                </div>
-                <!-- /.row -->
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer p-0">
-                <ul class="nav nav-pills flex-column">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      United States of America
-                      <span class="float-right text-danger">
-                        <i class="fas fa-arrow-down text-sm"></i>
-                        12%</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      India
-                      <span class="float-right text-success">
-                        <i class="fas fa-arrow-up text-sm"></i> 4%
-                      </span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      China
-                      <span class="float-right text-warning">
-                        <i class="fas fa-arrow-left text-sm"></i> 0%
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <!-- /.footer -->
-            </div>
             <!-- /.card -->
-
             <!-- PRODUCT LIST -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Recently Added Products</h3>
+                <h3 class="card-title">Recently Added Publications</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -1330,6 +762,46 @@
               <!-- /.card-footer -->
             </div>
             <!-- /.card -->
+            <!-- Info Boxes Style 2 -->
+            <div class="info-box mb-3 bg-warning">
+              <span class="info-box-icon"><i class="fas fa-tag"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Inventory</span>
+                <span class="info-box-number">5,200</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+            <div class="info-box mb-3 bg-success">
+              <span class="info-box-icon"><i class="far fa-heart"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Mentions</span>
+                <span class="info-box-number">92,050</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+            <div class="info-box mb-3 bg-danger">
+              <span class="info-box-icon"><i class="fas fa-cloud-download-alt"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Downloads</span>
+                <span class="info-box-number">114,381</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+            <div class="info-box mb-3 bg-info">
+              <span class="info-box-icon"><i class="far fa-comment"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Direct Messages</span>
+                <span class="info-box-number">163,921</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
           </div>
           <!-- /.col -->
         </div>
@@ -1345,15 +817,6 @@
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
-
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0
-    </div>
-  </footer>
 </div>
 <!-- ./wrapper -->
 

@@ -14,19 +14,6 @@
                             <label for="prenom" class="col-md-4 col-form-label text-md-end">{{ __('Prenom') }}</label>
 
                             <div class="col-md-6">
-                                <!-- <input id="prenom" type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" value="{{ old('prenom') }}" required autocomplete="prenom" autofocus> -->
-                                <input type="text" name="prenom">
-                                @error('prenom')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="prenom" class="col-md-4 col-form-label text-md-end">{{ __('Prenom') }}</label>
-
-                            <div class="col-md-6">
                                 <input id="prenom" type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" value="{{ old('prenom') }}" required autocomplete="prenom" autofocus>
 
                                 @error('prenom')
@@ -64,23 +51,7 @@
                             </div>
                         </div>
                         
-                        <div class="row mb-3">
-                            <label for="statut" class="col-md-4 col-form-label text-md-end">{{ __('Statut') }}</label>
-
-                            <div class="col-md-6">
-                            <select id="role" name="role">
-                                <option value="Prof">Prof</option>
-                                <option value="Doctorant">Doctorant</option>
-                                <option value="Partenaire">Partenaire</option>
-                                <option value="Autre">Autre</option>
-                            </select>
-                                @error('statut')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                    
                         <div class="row mb-3">
                             <label for="statut" class="col-md-4 col-form-label text-md-end">{{ __('Statut') }}</label>
 

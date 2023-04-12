@@ -14,16 +14,10 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('prenom');
-<<<<<<< Updated upstream
             $table->string('nom');
             $table->string('email')->unique();
             $table->string('role'); 
             $table->unsignedBigInteger('encadrant')->nullable()->default(null);
-=======
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('role'); 
->>>>>>> Stashed changes
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
