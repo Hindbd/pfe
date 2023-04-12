@@ -179,7 +179,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{$user->prenom}} {{$user->name}}</a>
+          <a href="pages\examples\profile" class="d-block">{{$user->prenom}} {{$user->name}}</a>
         </div>
       </div>
 
@@ -312,6 +312,24 @@
               <p>Contact us</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ route('logout') }}"onclick="event.preventDefault();
+             document.getElementById('logout-form').submit();" class="nav-link">
+              <i class="far fa-address-card nav-icon"></i>
+              <p>Logout</p>
+            </a>
+          </li>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+              </form>
+              <!-- <script>
+  //redirect to the home page after logging out
+  document.getElementById('logout-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    document.getElementById('logout-form').submit();
+    window.location.href = "{{ route('welcome') }}";
+  });
+</script> -->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

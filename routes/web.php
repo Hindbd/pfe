@@ -58,7 +58,5 @@ Route::get('/Recherche',function(){
 Route::get('/Publications',function(){
     return view('Publications');
 });
-// Route::get('/welcome',function(){
-//     return view('welcome');
-// });
+
 
