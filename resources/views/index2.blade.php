@@ -322,14 +322,7 @@
               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
               </form>
-              <!-- <script>
-  //redirect to the home page after logging out
-  document.getElementById('logout-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    document.getElementById('logout-form').submit();
-    window.location.href = "{{ route('welcome') }}";
-  });
-</script> -->
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

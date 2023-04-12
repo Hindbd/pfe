@@ -34,9 +34,7 @@ class HomeController extends Controller
             $posts = DB::table('pubs')->get();
             // return view('welcome', ['posts' => $posts,
             // 'user' => $user,]);
-        return view('welcome', ['user' => $user]);
-            // return view('welcome', ['user' => $user]);
-
+            return view('index2', ['user' => $user]);
         
     }
 }

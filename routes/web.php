@@ -22,9 +22,9 @@ use App\Http\Controllers\HomeController;
 //     return view('welcome');
 // });
 
-Route::get('/dashboard', function () {
-    return view('welcome');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('welcome');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -34,10 +34,10 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/', function(){
-    return view('welcome');
-});
-//  Route::get('/' , [pubscontroller::class, 'index']);
+// Route::get('/', function(){
+//     return view('welcome');
+// });
+Route::get('/' , [pubscontroller::class, 'index'])->name('welcome');
  Route::get('/index2' , [HomeController::class, 'index']);
 //  Route::get('/index2' , [pubscontroller::class, 'index']);
 //  Route::get('/' , [HomeController::class, 'index']);
