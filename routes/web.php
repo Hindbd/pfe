@@ -18,10 +18,6 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/dashboard', function () {
     return view('welcome');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -39,7 +35,6 @@ require __DIR__.'/auth.php';
 //  Route::get('/index2' , [pubscontroller::class, 'index']);
 //  Route::get('/' , [HomeController::class, 'index']);
 
-
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index2'])->name('home');
@@ -47,8 +42,6 @@ Auth::routes();
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index2'])->name('home');
-
-
 // Route::get('/index2', function(){
 //     return view('index2');
 // });
@@ -59,4 +52,6 @@ Route::get('/Publications',function(){
     return view('Publications');
 });
 
-
+Route::get('/', function () {
+    return view('welcome');
+});

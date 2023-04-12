@@ -179,7 +179,11 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="pages\examples\profile" class="d-block">{{$user->prenom}} {{$user->name}}</a>
+          <a href="pages\examples\profile" class="d-block">
+            @if(isset($user))
+              {{$user->prenom}} {{$user->name}}
+            @endif  
+            </a>
         </div>
       </div>
 
