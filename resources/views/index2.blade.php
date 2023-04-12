@@ -179,7 +179,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="profile.blade.php" class="d-block">{{$user->prenom}} {{$user->name}}</a>
+          <a href="profile.blade.php" class="d-block">{{$user->name}}</a>
         </div>
       </div>
 
@@ -259,7 +259,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="profile.blade.php" class="nav-link">
+            <a href="profile" class="nav-link">
               <i class="far fa-user nav-icon"></i>
               <p>
                 Profile

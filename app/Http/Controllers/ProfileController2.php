@@ -10,7 +10,7 @@ class ProfileController2 extends Controller
     //
     public function index(){
         $user = Auth::user();
-        return view('profile')
+        return view('profile',['user'=>$user]);
 
 }
 }
