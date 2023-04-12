@@ -18,9 +18,6 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('role'); 
             $table->unsignedBigInteger('encadrant')->nullable()->default(null);
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('role'); 
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

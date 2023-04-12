@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin | Gallery</title>
+  <title>Admin | Kanban Board</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -13,10 +13,12 @@
   <link rel="stylesheet" href="../plugins/ekko-lightbox/ekko-lightbox.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Bootstrap icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -311,201 +313,190 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+  <div class="content-wrapper kanban">
     <section class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
+        <div class="row">
           <div class="col-sm-6">
-            <h1>Gallery</h1>
+            <h1>Kanban Board</h1>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-6 d-none d-sm-block">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Gallery</li>
+              <li class="breadcrumb-item active">Kanban Board</li>
             </ol>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="card card-primary">
+    <section class="content pb-3">
+      <div class="container-fluid h-100">
+        <div class="card card-row card-secondary">
+          <div class="card-header">
+            <h3 class="card-title">
+              Backlog
+            </h3>
+          </div>
+          <div class="card-body">
+            <div class="card card-info card-outline">
               <div class="card-header">
-                <h4 class="card-title">FilterizR Gallery with Ekko Lightbox</h4>
+                <h5 class="card-title">Create Labels</h5>
+                <div class="card-tools">
+                  <a href="#" class="btn btn-tool btn-link">#3</a>
+                  <a href="#" class="btn btn-tool">
+                    <i class="fas fa-pen"></i>
+                  </a>
+                </div>
               </div>
               <div class="card-body">
-                <div>
-                  <div class="btn-group w-100 mb-2">
-                    <a class="btn btn-info active" href="javascript:void(0)" data-filter="all"> All items </a>
-                    <a class="btn btn-info" href="javascript:void(0)" data-filter="1"> Category 1 (WHITE) </a>
-                    <a class="btn btn-info" href="javascript:void(0)" data-filter="2"> Category 2 (BLACK) </a>
-                    <a class="btn btn-info" href="javascript:void(0)" data-filter="3"> Category 3 (COLORED) </a>
-                    <a class="btn btn-info" href="javascript:void(0)" data-filter="4"> Category 4 (COLORED, BLACK) </a>
-                  </div>
-                  <div class="mb-2">
-                    <a class="btn btn-secondary" href="javascript:void(0)" data-shuffle> Shuffle items </a>
-                    <div class="float-right">
-                      <select class="custom-select" style="width: auto;" data-sortOrder>
-                        <option value="index"> Sort by Position </option>
-                        <option value="sortData"> Sort by Custom Data </option>
-                      </select>
-                      <div class="btn-group">
-                        <a class="btn btn-default" href="javascript:void(0)" data-sortAsc> Ascending </a>
-                        <a class="btn btn-default" href="javascript:void(0)" data-sortDesc> Descending </a>
-                      </div>
-                    </div>
-                  </div>
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="customCheckbox1" disabled>
+                  <label for="customCheckbox1" class="custom-control-label">Bug</label>
                 </div>
-                <div>
-                  <div class="filter-container p-0 row">
-                    <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample">
-                      <a href="https://via.placeholder.com/1200/FFFFFF.png?text=1" data-toggle="lightbox" data-title="sample 1 - white">
-                        <img src="https://via.placeholder.com/300/FFFFFF?text=1" class="img-fluid mb-2" alt="white sample"/>
-                      </a>
-                    </div>
-                    <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="black sample">
-                      <a href="https://via.placeholder.com/1200/000000.png?text=2" data-toggle="lightbox" data-title="sample 2 - black">
-                        <img src="https://via.placeholder.com/300/000000?text=2" class="img-fluid mb-2" alt="black sample"/>
-                      </a>
-                    </div>
-                    <div class="filtr-item col-sm-2" data-category="3, 4" data-sort="red sample">
-                      <a href="https://via.placeholder.com/1200/FF0000/FFFFFF.png?text=3" data-toggle="lightbox" data-title="sample 3 - red">
-                        <img src="https://via.placeholder.com/300/FF0000/FFFFFF?text=3" class="img-fluid mb-2" alt="red sample"/>
-                      </a>
-                    </div>
-                    <div class="filtr-item col-sm-2" data-category="3, 4" data-sort="red sample">
-                      <a href="https://via.placeholder.com/1200/FF0000/FFFFFF.png?text=4" data-toggle="lightbox" data-title="sample 4 - red">
-                        <img src="https://via.placeholder.com/300/FF0000/FFFFFF?text=4" class="img-fluid mb-2" alt="red sample"/>
-                      </a>
-                    </div>
-                    <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="black sample">
-                      <a href="https://via.placeholder.com/1200/000000.png?text=5" data-toggle="lightbox" data-title="sample 5 - black">
-                        <img src="https://via.placeholder.com/300/000000?text=5" class="img-fluid mb-2" alt="black sample"/>
-                      </a>
-                    </div>
-                    <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample">
-                      <a href="https://via.placeholder.com/1200/FFFFFF.png?text=6" data-toggle="lightbox" data-title="sample 6 - white">
-                        <img src="https://via.placeholder.com/300/FFFFFF?text=6" class="img-fluid mb-2" alt="white sample"/>
-                      </a>
-                    </div>
-                    <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample">
-                      <a href="https://via.placeholder.com/1200/FFFFFF.png?text=7" data-toggle="lightbox" data-title="sample 7 - white">
-                        <img src="https://via.placeholder.com/300/FFFFFF?text=7" class="img-fluid mb-2" alt="white sample"/>
-                      </a>
-                    </div>
-                    <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="black sample">
-                      <a href="https://via.placeholder.com/1200/000000.png?text=8" data-toggle="lightbox" data-title="sample 8 - black">
-                        <img src="https://via.placeholder.com/300/000000?text=8" class="img-fluid mb-2" alt="black sample"/>
-                      </a>
-                    </div>
-                    <div class="filtr-item col-sm-2" data-category="3, 4" data-sort="red sample">
-                      <a href="https://via.placeholder.com/1200/FF0000/FFFFFF.png?text=9" data-toggle="lightbox" data-title="sample 9 - red">
-                        <img src="https://via.placeholder.com/300/FF0000/FFFFFF?text=9" class="img-fluid mb-2" alt="red sample"/>
-                      </a>
-                    </div>
-                    <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample">
-                      <a href="https://via.placeholder.com/1200/FFFFFF.png?text=10" data-toggle="lightbox" data-title="sample 10 - white">
-                        <img src="https://via.placeholder.com/300/FFFFFF?text=10" class="img-fluid mb-2" alt="white sample"/>
-                      </a>
-                    </div>
-                    <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample">
-                      <a href="https://via.placeholder.com/1200/FFFFFF.png?text=11" data-toggle="lightbox" data-title="sample 11 - white">
-                        <img src="https://via.placeholder.com/300/FFFFFF?text=11" class="img-fluid mb-2" alt="white sample"/>
-                      </a>
-                    </div>
-                    <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="black sample">
-                      <a href="https://via.placeholder.com/1200/000000.png?text=12" data-toggle="lightbox" data-title="sample 12 - black">
-                        <img src="https://via.placeholder.com/300/000000?text=12" class="img-fluid mb-2" alt="black sample"/>
-                      </a>
-                    </div>
-                  </div>
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="customCheckbox2" disabled>
+                  <label for="customCheckbox2" class="custom-control-label">Feature</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="customCheckbox3" disabled>
+                  <label for="customCheckbox3" class="custom-control-label">Enhancement</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="customCheckbox4" disabled>
+                  <label for="customCheckbox4" class="custom-control-label">Documentation</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="customCheckbox5" disabled>
+                  <label for="customCheckbox5" class="custom-control-label">Examples</label>
+                </div>
+              </div>
+            </div>
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h5 class="card-title">Create Issue template</h5>
+                <div class="card-tools">
+                  <a href="#" class="btn btn-tool btn-link">#4</a>
+                  <a href="#" class="btn btn-tool">
+                    <i class="fas fa-pen"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="customCheckbox1_1" disabled>
+                  <label for="customCheckbox1_1" class="custom-control-label">Bug Report</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="customCheckbox1_2" disabled>
+                  <label for="customCheckbox1_2" class="custom-control-label">Feature Request</label>
+                </div>
+              </div>
+            </div>
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h5 class="card-title">Create PR template</h5>
+                <div class="card-tools">
+                  <a href="#" class="btn btn-tool btn-link">#6</a>
+                  <a href="#" class="btn btn-tool">
+                    <i class="fas fa-pen"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card card-light card-outline">
+              <div class="card-header">
+                <h5 class="card-title">Create Actions</h5>
+                <div class="card-tools">
+                  <a href="#" class="btn btn-tool btn-link">#7</a>
+                  <a href="#" class="btn btn-tool">
+                    <i class="fas fa-pen"></i>
+                  </a>
                 </div>
 
+              </div>
+              <div class="card-body">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Aenean commodo ligula eget dolor. Aenean massa.
+                  Cum sociis natoque penatibus et magnis dis parturient montes,
+                  nascetur ridiculus mus.
+                </p>
               </div>
             </div>
           </div>
-          <div class="col-12">
-            <div class="card card-primary">
+        </div>
+        <div class="card card-row card-primary">
+          <div class="card-header">
+            <h3 class="card-title">
+              To Do
+            </h3>
+          </div>
+          <div class="card-body">
+            <div class="card card-primary card-outline">
               <div class="card-header">
-                <h4 class="card-title">Ekko Lightbox</h4>
-              </div>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-sm-2">
-                    <a href="https://via.placeholder.com/1200/FFFFFF.png?text=1" data-toggle="lightbox" data-title="sample 1 - white" data-gallery="gallery">
-                      <img src="https://via.placeholder.com/300/FFFFFF?text=1" class="img-fluid mb-2" alt="white sample"/>
-                    </a>
-                  </div>
-                  <div class="col-sm-2">
-                    <a href="https://via.placeholder.com/1200/000000.png?text=2" data-toggle="lightbox" data-title="sample 2 - black" data-gallery="gallery">
-                      <img src="https://via.placeholder.com/300/000000?text=2" class="img-fluid mb-2" alt="black sample"/>
-                    </a>
-                  </div>
-                  <div class="col-sm-2">
-                    <a href="https://via.placeholder.com/1200/FF0000/FFFFFF.png?text=3" data-toggle="lightbox" data-title="sample 3 - red" data-gallery="gallery">
-                      <img src="https://via.placeholder.com/300/FF0000/FFFFFF?text=3" class="img-fluid mb-2" alt="red sample"/>
-                    </a>
-                  </div>
-                  <div class="col-sm-2">
-                    <a href="https://via.placeholder.com/1200/FF0000/FFFFFF.png?text=4" data-toggle="lightbox" data-title="sample 4 - red" data-gallery="gallery">
-                      <img src="https://via.placeholder.com/300/FF0000/FFFFFF?text=4" class="img-fluid mb-2" alt="red sample"/>
-                    </a>
-                  </div>
-                  <div class="col-sm-2">
-                    <a href="https://via.placeholder.com/1200/000000.png?text=5" data-toggle="lightbox" data-title="sample 5 - black" data-gallery="gallery">
-                      <img src="https://via.placeholder.com/300/000000?text=5" class="img-fluid mb-2" alt="black sample"/>
-                    </a>
-                  </div>
-                  <div class="col-sm-2">
-                    <a href="https://via.placeholder.com/1200/FFFFFF.png?text=6" data-toggle="lightbox" data-title="sample 6 - white" data-gallery="gallery">
-                      <img src="https://via.placeholder.com/300/FFFFFF?text=6" class="img-fluid mb-2" alt="white sample"/>
-                    </a>
-                  </div>
-                  <div class="col-sm-2">
-                    <a href="https://via.placeholder.com/1200/FFFFFF.png?text=7" data-toggle="lightbox" data-title="sample 7 - white" data-gallery="gallery">
-                      <img src="https://via.placeholder.com/300/FFFFFF?text=7" class="img-fluid mb-2" alt="white sample"/>
-                    </a>
-                  </div>
-                  <div class="col-sm-2">
-                    <a href="https://via.placeholder.com/1200/000000.png?text=8" data-toggle="lightbox" data-title="sample 8 - black" data-gallery="gallery">
-                      <img src="https://via.placeholder.com/300/000000?text=8" class="img-fluid mb-2" alt="black sample"/>
-                    </a>
-                  </div>
-                  <div class="col-sm-2">
-                    <a href="https://via.placeholder.com/1200/FF0000/FFFFFF.png?text=9" data-toggle="lightbox" data-title="sample 9 - red" data-gallery="gallery">
-                      <img src="https://via.placeholder.com/300/FF0000/FFFFFF?text=9" class="img-fluid mb-2" alt="red sample"/>
-                    </a>
-                  </div>
-                  <div class="col-sm-2">
-                    <a href="https://via.placeholder.com/1200/FFFFFF.png?text=10" data-toggle="lightbox" data-title="sample 10 - white" data-gallery="gallery">
-                      <img src="https://via.placeholder.com/300/FFFFFF?text=10" class="img-fluid mb-2" alt="white sample"/>
-                    </a>
-                  </div>
-                  <div class="col-sm-2">
-                    <a href="https://via.placeholder.com/1200/FFFFFF.png?text=11" data-toggle="lightbox" data-title="sample 11 - white" data-gallery="gallery">
-                      <img src="https://via.placeholder.com/300/FFFFFF?text=11" class="img-fluid mb-2" alt="white sample"/>
-                    </a>
-                  </div>
-                  <div class="col-sm-2">
-                    <a href="https://via.placeholder.com/1200/000000.png?text=12" data-toggle="lightbox" data-title="sample 12 - black" data-gallery="gallery">
-                      <img src="https://via.placeholder.com/300/000000?text=12" class="img-fluid mb-2" alt="black sample"/>
-                    </a>
-                  </div>
+                <h5 class="card-title">Create first milestone</h5>
+                <div class="card-tools">
+                  <a href="#" class="btn btn-tool btn-link">#5</a>
+                  <a href="#" class="btn btn-tool">
+                    <i class="fas fa-pen"></i>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
+        <div class="card card-row card-default">
+          <div class="card-header bg-info">
+            <h3 class="card-title">
+              In Progress
+            </h3>
+          </div>
+          <div class="card-body">
+            <div class="card card-light card-outline">
+              <div class="card-header">
+                <h5 class="card-title">Update Readme</h5>
+                <div class="card-tools">
+                  <a href="#" class="btn btn-tool btn-link">#2</a>
+                  <a href="#" class="btn btn-tool">
+                    <i class="fas fa-pen"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Aenean commodo ligula eget dolor. Aenean massa.
+                  Cum sociis natoque penatibus et magnis dis parturient montes,
+                  nascetur ridiculus mus.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card card-row card-success">
+          <div class="card-header">
+            <h3 class="card-title">
+              Done
+            </h3>
+          </div>
+          <div class="card-body">
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h5 class="card-title">Create repo</h5>
+                <div class="card-tools">
+                  <a href="#" class="btn btn-tool btn-link">#1</a>
+                  <a href="#" class="btn btn-tool">
+                    <i class="fas fa-pen"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
 
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
@@ -528,6 +519,8 @@
 <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- Ekko Lightbox -->
 <script src="../plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.min.js"></script>
 <!-- Filterizr-->
@@ -537,18 +530,7 @@
 <!-- Page specific script -->
 <script>
   $(function () {
-    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-      event.preventDefault();
-      $(this).ekkoLightbox({
-        alwaysShowClose: true
-      });
-    });
 
-    $('.filter-container').filterizr({gutterPixels: 3});
-    $('.btn[data-filter]').on('click', function() {
-      $('.btn[data-filter]').removeClass('active');
-      $(this).addClass('active');
-    });
   })
 </script>
 </body>

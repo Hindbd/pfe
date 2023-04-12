@@ -50,7 +50,7 @@
                                 @enderror
                             </div>
                         </div>
-                        
+                    
                         <div class="row mb-3">
                             <label for="statut" class="col-md-4 col-form-label text-md-end">{{ __('Statut') }}</label>
 
@@ -68,7 +68,6 @@
                                 @enderror
                             </div>
                         </div>
-
                         <div id="doctorant_only" style="display:none;"  >
                             <div class="row mb-3">
                                 <label for="statut" class="col-md-4 col-form-label text-md-end">{{ __('Encadrant') }}</label>
