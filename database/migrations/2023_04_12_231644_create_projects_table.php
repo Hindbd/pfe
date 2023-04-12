@@ -26,7 +26,7 @@ return new class extends Migration
             $table->foreign('axes')
             ->references('id')
             ->on('axes')
-            ->
+            
         });
     }
 
