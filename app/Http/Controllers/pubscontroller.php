@@ -15,9 +15,9 @@ class pubscontroller extends Controller
 {
     $user = Auth::user();
     $posts = DB::table('pubs')->get();
-    return view('welcome', ['posts' => $posts,
-    'user' => $user,
-]);
+    // return view('welcome', ['posts' => $posts,
+    // 'user' => $user,]);
+return view('welcome', ['user' => $user]);
  
 }
 }
