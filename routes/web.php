@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProfileController2;
 use App\Http\Controllers\pubscontroller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -18,10 +19,6 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 // Route::get('/dashboard', function () {
 //     return view('welcome');
 // })->middleware(['auth', 'verified'])->name('dashboard');
@@ -34,14 +31,9 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-// Route::get('/', function(){
-//     return view('welcome');
-// });
 Route::get('/' , [pubscontroller::class, 'index'])->name('welcome');
- Route::get('/index2' , [HomeController::class, 'index']);
-//  Route::get('/index2' , [pubscontroller::class, 'index']);
-//  Route::get('/' , [HomeController::class, 'index']);
-
+Route::get('/index2' , [HomeController::class, 'index']);
+Route::get('/profile',[ProfileController2::class, 'index']);
 
 Auth::routes();
 
@@ -49,12 +41,6 @@ Auth::routes();
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index2'])->name('home');
-
-
-// Route::get('/index2', function(){
-//     return view('index2');
-// });
 Route::get('/Recherche',function(){
     return view('Recherche');
 });
