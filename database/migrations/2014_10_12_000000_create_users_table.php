@@ -25,6 +25,23 @@ return new class extends Migration
             $table->timestamps();
         
         });
+        Schema::create('affectation', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->String("FK_axes");
+            $table->string("FK_prj");
+            $table->string("FK_equipe");
+            $table->foreign('FK_axes')
+            ->references('id')
+            ->on('axes');
+            $table->foreign('FK_prj')
+            ->references('id')
+            ->on('projects');
+            $table->foreign('FK_equipe')
+            ->references('id')
+            ->on('equipes');  
+        
+        });
     }
 
     /**

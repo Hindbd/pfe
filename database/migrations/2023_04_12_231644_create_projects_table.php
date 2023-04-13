@@ -14,18 +14,14 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->nom(); 
-            $table->responsable_prj();
-            $table->axes();
+            $table->string("nom"); 
+            $table->string("responsable_prj");
             $table->timestamps();
             $table->foreign('responsable_prj')
             ->references('id')
             ->on('users')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->foreign('FK_axes')
-            ->references('id')
-            ->on('axes')
             
         });
     }
