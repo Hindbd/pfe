@@ -48,4 +48,6 @@ Route::get('/Publications',function(){
     return view('Publications');
 });
 
-
+Route::get('/', function () {
+    return view('welcome');
+});
