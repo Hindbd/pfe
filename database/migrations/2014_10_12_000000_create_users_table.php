@@ -23,11 +23,6 @@ return new class extends Migration
             $table->rememberToken();
             $table->string('img')->nullable()->default(null);;
             $table->timestamps();
-            $table->foreign('encadrant')
-                   ->references('id')
-                   ->on('users')
-                   ->onDelete('cascade')
-                   ->onUpdate('cascade');
         
         });
     }

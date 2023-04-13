@@ -56,7 +56,7 @@
 
                             <div class="col-md-6">
                             <select id="role" name="role">
-                                <option value="Prof">Prof</option>
+                                <option value="Prof">Enseignant</option>
                                 <option value="Doctorant">Doctorant</option>
                                 <option value="Partenaire">Partenaire</option>
                                 <option value="Autre">Autre</option>
@@ -70,14 +70,16 @@
                         </div>
                         <div id="doctorant_only" style="display:none;"  >
                             <div class="row mb-3">
-                                <label for="statut" class="col-md-4 col-form-label text-md-end">{{ __('Encadrant') }}</label>
+                                <label for="encadrant" class="col-md-4 col-form-label text-md-end">{{ __('Encadrant') }}</label>
 
                                 <div class="col-md-6" >
                                 <select  name="encadrant">
-                                    <option value="1">koutti</option>
-                                    <option value="the_lord">afdel</option>
-                                    <option value="boulouz">boulouz</option>
+                                     @foreach($profs as $prof)
+                                        <option value='{{$prof->id}}'>{{$prof->name .' '.$prof->prenom}}</option>
+                                    @endforeach 
+                                    
                                 </select>
+                            
                                     @error('encadrant')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

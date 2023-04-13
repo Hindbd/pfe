@@ -18,12 +18,12 @@ return new class extends Migration
             $table->responsable_prj();
             $table->axes();
             $table->timestamps();
-            $table->foreign('responsable_prj/')
+            $table->foreign('responsable_prj')
             ->references('id')
             ->on('users')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->foreign('axes')
+            $table->foreign('FK_axes')
             ->references('id')
             ->on('axes')
             

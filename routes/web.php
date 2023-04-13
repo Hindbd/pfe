@@ -6,6 +6,8 @@ use App\Http\Controllers\pubscontroller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\RegisteredUserController;
+
 
 
 /*
@@ -51,6 +53,8 @@ Route::get('/Publications',function(){
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('register', [RegisteredUserController::class, 'create'])
+                 ->name('register');
 // roles 
 Route::middleware('auth')->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dasghboard');

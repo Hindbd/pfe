@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('equipes', function (Blueprint $table) {
             $table->id();
+            $table->nom();
+            $table->chef_equipe();
             $table->timestamps();
+            $table->foreign('chef_equipe')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
         });
     }
 

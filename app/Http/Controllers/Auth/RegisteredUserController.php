@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\DB;
+use Symfony\Component\Console\Logger\ConsoleLogger;
 
 class RegisteredUserController extends Controller
 {
@@ -20,9 +22,23 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
-    }
+        $profs = DB::table('users')
+            ->where('role', '=', 'prof')
+            ->get();
+        return view('auth.register',['profs'=>$profs]);
 
+    }
+    // public function creation(): View
+    // {
+    //     $profs = DB::table('users')
+    //         ->where('role', '=', 'partenaire')
+    //         ->get();
+    //     $id=1;
+    //     dd($profs);
+    //     return view('auth.register');
+    //     // return view('auth.register',['pfs'=>$profs]);
+
+    // }
     /**
      * Handle an incoming registration request.
      *

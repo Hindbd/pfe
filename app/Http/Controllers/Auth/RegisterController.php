@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'role' =>['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            ['nullable', 'string', 'max:255'],
+            'encadrant'=>['nullable']
         ]);
     }
 
@@ -74,7 +74,6 @@ class RegisterController extends Controller
             'role' =>$data['role'],
             'encadrant'=>$data['encadrant'],
             'password' => Hash::make($data['password']),
-            // 'img'=>$data['img'],
         ]);
     }
 }
