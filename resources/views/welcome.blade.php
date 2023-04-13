@@ -350,7 +350,7 @@
         </div> -->
         @if (Route::has('login') && Auth::check())
                 <div class="top-right links">
-                    <a href="{{ url('/index2') }}">{{$user->name}}</a>
+                    <a href="{{ url('/index2') }}">{{$user->prenom}}</a>
                 </div>
             @elseif (Route::has('login') && !Auth::check())
                 <div class="top-right links">

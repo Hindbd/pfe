@@ -51,3 +51,9 @@ Route::get('/Publications',function(){
 Route::get('/', function () {
     return view('welcome');
 });
+// roles 
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dasghboard');
+    Route::get('/enseignat/dashboard', [EnseignantController::class, 'index'])->name('enseignant.dashboard');
+    Route::get('/membre/dashboard', [MembreController::class, 'index'])->name('membre.destroy');
+});
