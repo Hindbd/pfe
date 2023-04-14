@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('axes', function (Blueprint $table) {
             $table->id();
-            $table->nom();
-            $table->contenu();
+            $table->string("nom");
+            $table->string("contenu");
             $table->timestamps();
         });
     }

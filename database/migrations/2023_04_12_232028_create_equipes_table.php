@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('equipes', function (Blueprint $table) {
             $table->id();
             $table->string("nom");
-            $table->string("chef_equipe");
+            $table->unsignedBigInteger("chef_equipe");
             $table->timestamps();
             $table->foreign('chef_equipe')
             ->references('id')
