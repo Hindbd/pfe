@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin | Compose Message</title>
+  <title>Admin | Project Details</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-  <!-- summernote -->
-  <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.min.css">
   <!-- Bootstrap icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 </head>
 <body class="hold-transition sidebar-mini">
+<!-- Site wrapper -->
 <div class="wrapper">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -155,11 +155,14 @@
     </ul>
   </nav>
   <!-- /.navbar -->
+
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
+    <a href="/welcome" class="brand-link">
+      <img src="../img/lab4.png" alt="LabSIV Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
     <a href="../index2.blade.php" class="brand-link">
-      <img src="/img/lab4.png" alt="LabSIV Logo" class="brand-image img-circle elevation-3" style="opacity: .8; font-size:x-large;">
+      <img src="../img/lab4.png" alt="LabSIV Logo" class="brand-image img-circle elevation-3" style="opacity: .8; font-size:x-large;">
       <span class="brand-text font-weight-light">LabSIV</span>
     </a>
     <!-- Sidebar -->
@@ -167,10 +170,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-1 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{$user->prenom}} {{$user->name}}</a>
+          <a href="profile.blade.php" class="d-block">{{$user->name}}</a>
         </div>
       </div>
 
@@ -180,7 +183,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="/index2" class="nav-link active">
+            <a href="./index2" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -188,24 +191,31 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../UI/timeline.blade.php" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+            <a href="profile" class="nav-link">
+              <i class="far fa-user nav-icon"></i>
+              <p>
+                Profile
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="timeline" class="nav-link">
+              <i class="nav-icon fas fa-timeline"></i>
               <p>
                 Timeline
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="../calendar.blade.php" class="nav-link">
+            <a href="calendar" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
                 Calendar
-                <span class="badge badge-info right">2</span>
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="../gallery.blade.php" class="nav-link">
+            <a href="gallery" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Gallery
@@ -213,7 +223,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../kanban.blade.php" class="nav-link">
+            <a href="kanban" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Kanban Board
@@ -230,32 +240,24 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./mailbox.blade.php" class="nav-link">
+                <a href="mailbox.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inbox</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./compose.blade.php" class="nav-link">
+                <a href="compose.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Compose</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./read-mail.blade.php" class="nav-link">
+                <a href="read-mail.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Read</p>
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a href="../examples/profile.blade.php" class="nav-link">
-              <i class="far fa-user nav-icon"></i>
-              <p>
-                Profile
-              </p>
-            </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -266,25 +268,25 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../examples/projects.blade.php" class="nav-link">
+                <a href="projects.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>All</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/project-add.blade.php" class="nav-link">
+                <a href="project-add.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Project</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/project-edit.blade.php" class="nav-link">
+                <a href="project-edit.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Edit Project</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/project-detail.blade.php" class="nav-link">
+                <a href="project-detail.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Project Details</p>
                 </a>
@@ -292,17 +294,55 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="../examples/contacts.blade.php" class="nav-link">
+            <a href="#" class="nav-link">
+              <i class="fas fa-users nav-icon"></i>
+              <p>Teams
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="projects.blade.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="project-add.blade.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Team</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="project-edit.blade.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Edit Team</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="contacts.blade.php" class="nav-link">
               <i class="far fa-address-book nav-icon"></i>
               <p>Contacts</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="../examples/contact-us.blade.php" class="nav-link">
+            <a href="contact-us.blade.php" class="nav-link">
               <i class="far fa-address-card nav-icon"></i>
               <p>Contact us</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ route('logout') }}"onclick="event.preventDefault();
+             document.getElementById('logout-form').submit();" class="nav-link">
+              <i class="fas fa-arrow-right-from-bracket nav-icon"></i>
+              <p>Logout</p>
+            </a>
+          </li>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+              </form>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -317,12 +357,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Compose</h1>
+            <h1>Project Detail</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Compose</li>
+              <li class="breadcrumb-item active">Project Detail</li>
             </ol>
           </div>
         </div>
@@ -331,158 +371,160 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-3">
-            <a href="mailbox.html" class="btn btn-primary btn-block mb-3">Back to Inbox</a>
 
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Folders</h3>
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Projects Detail</h3>
 
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="card-body p-0">
-                <ul class="nav nav-pills flex-column">
-                  <li class="nav-item active">
-                    <a href="#" class="nav-link">
-                      <i class="fas fa-inbox"></i> Inbox
-                      <span class="badge bg-primary float-right">12</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-envelope"></i> Sent
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-file-alt"></i> Drafts
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="fas fa-filter"></i> Junk
-                      <span class="badge bg-warning float-right">65</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-trash-alt"></i> Trash
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Labels</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <ul class="nav nav-pills flex-column">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="far fa-circle text-danger"></i> Important</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="far fa-circle text-warning"></i> Promotions</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="far fa-circle text-primary"></i> Social</a>
-                  </li>
-                </ul>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+              <i class="fas fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+              <i class="fas fa-times"></i>
+            </button>
           </div>
-          <!-- /.col -->
-          <div class="col-md-9">
-            <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h3 class="card-title">Compose New Message</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <div class="form-group">
-                  <input class="form-control" placeholder="To:">
-                </div>
-                <div class="form-group">
-                  <input class="form-control" placeholder="Subject:">
-                </div>
-                <div class="form-group">
-                    <textarea id="compose-textarea" class="form-control" style="height: 300px">
-                      <h1><u>Heading Of Message</u></h1>
-                      <h4>Subheading</h4>
-                      <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain
-                        was born and I will give you a complete account of the system, and expound the actual teachings
-                        of the great explorer of the truth, the master-builder of human happiness. No one rejects,
-                        dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know
-                        how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again
-                        is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain,
-                        but because occasionally circumstances occur in which toil and pain can procure him some great
-                        pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise,
-                        except to obtain some advantage from it? But who has any right to find fault with a man who
-                        chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that
-                        produces no resultant pleasure? On the other hand, we denounce with righteous indignation and
-                        dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so
-                        blinded by desire, that they cannot foresee</p>
-                      <ul>
-                        <li>List item one</li>
-                        <li>List item two</li>
-                        <li>List item three</li>
-                        <li>List item four</li>
-                      </ul>
-                      <p>Thank you,</p>
-                      <p>John Doe</p>
-                    </textarea>
-                </div>
-                <div class="form-group">
-                  <div class="btn btn-default btn-file">
-                    <i class="fas fa-paperclip"></i> Attachment
-                    <input type="file" name="attachment">
-                  </div>
-                  <p class="help-block">Max. 32MB</p>
-                </div>
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer">
-                <div class="float-right">
-                  <button type="button" class="btn btn-default"><i class="fas fa-pencil-alt"></i> Draft</button>
-                  <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Send</button>
-                </div>
-                <button type="reset" class="btn btn-default"><i class="fas fa-times"></i> Discard</button>
-              </div>
-              <!-- /.card-footer -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
+              <div class="row">
+                <div class="col-12 col-sm-4">
+                  <div class="info-box bg-light">
+                    <div class="info-box-content">
+                      <span class="info-box-text text-center text-muted">Estimated budget</span>
+                      <span class="info-box-number text-center text-muted mb-0">2300</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="info-box bg-light">
+                    <div class="info-box-content">
+                      <span class="info-box-text text-center text-muted">Total amount spent</span>
+                      <span class="info-box-number text-center text-muted mb-0">2000</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="info-box bg-light">
+                    <div class="info-box-content">
+                      <span class="info-box-text text-center text-muted">Estimated project duration</span>
+                      <span class="info-box-number text-center text-muted mb-0">20</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <h4>Recent Activity</h4>
+                    <div class="post">
+                      <div class="user-block">
+                        <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
+                        <span class="username">
+                          <a href="#">Jonathan Burke Jr.</a>
+                        </span>
+                        <span class="description">Shared publicly - 7:45 PM today</span>
+                      </div>
+                      <!-- /.user-block -->
+                      <p>
+                        Lorem ipsum represents a long-held tradition for designers,
+                        typographers and the like. Some people hate it and argue for
+                        its demise, but others ignore.
+                      </p>
+
+                      <p>
+                        <a href="#" class="link-black text-sm"><i class="fas fa-link mr-1"></i> Demo File 1 v2</a>
+                      </p>
+                    </div>
+
+                    <div class="post clearfix">
+                      <div class="user-block">
+                        <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User Image">
+                        <span class="username">
+                          <a href="#">Sarah Ross</a>
+                        </span>
+                        <span class="description">Sent you a message - 3 days ago</span>
+                      </div>
+                      <!-- /.user-block -->
+                      <p>
+                        Lorem ipsum represents a long-held tradition for designers,
+                        typographers and the like. Some people hate it and argue for
+                        its demise, but others ignore.
+                      </p>
+                      <p>
+                        <a href="#" class="link-black text-sm"><i class="fas fa-link mr-1"></i> Demo File 2</a>
+                      </p>
+                    </div>
+
+                    <div class="post">
+                      <div class="user-block">
+                        <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
+                        <span class="username">
+                          <a href="#">Jonathan Burke Jr.</a>
+                        </span>
+                        <span class="description">Shared publicly - 5 days ago</span>
+                      </div>
+                      <!-- /.user-block -->
+                      <p>
+                        Lorem ipsum represents a long-held tradition for designers,
+                        typographers and the like. Some people hate it and argue for
+                        its demise, but others ignore.
+                      </p>
+
+                      <p>
+                        <a href="#" class="link-black text-sm"><i class="fas fa-link mr-1"></i> Demo File 1 v1</a>
+                      </p>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
+              <h3 class="text-primary"><i class="fas fa-paint-brush"></i> AdminLTE v3</h3>
+              <p class="text-muted">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</p>
+              <br>
+              <div class="text-muted">
+                <p class="text-sm">Client Company
+                  <b class="d-block">Deveint Inc</b>
+                </p>
+                <p class="text-sm">Project Leader
+                  <b class="d-block">Tony Chicken</b>
+                </p>
+              </div>
+
+              <h5 class="mt-5 text-muted">Project files</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-word"></i> Functional-requirements.docx</a>
+                </li>
+                <li>
+                  <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-pdf"></i> UAT.pdf</a>
+                </li>
+                <li>
+                  <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-envelope"></i> Email-from-flatbal.mln</a>
+                </li>
+                <li>
+                  <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-image "></i> Logo.png</a>
+                </li>
+                <li>
+                  <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-word"></i> Contract-10_12_2014.docx</a>
+                </li>
+              </ul>
+              <div class="text-center mt-5 mb-3">
+                <a href="#" class="btn btn-sm btn-primary">Add files</a>
+                <a href="#" class="btn btn-sm btn-warning">Report contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
-    </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -498,16 +540,7 @@
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
-<!-- Summernote -->
-<script src="../../plugins/summernote/summernote-bs4.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
-<!-- Page specific script -->
-<script>
-  $(function () {
-    //Add text editor
-    $('#compose-textarea').summernote()
-  })
-</script>
 </body>
 </html>
