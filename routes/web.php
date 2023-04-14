@@ -7,8 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\RegisteredUserController;
-
-
+use App\Http\Controllers\TimelineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +35,10 @@ require __DIR__.'/auth.php';
 Route::get('/' , [pubscontroller::class, 'index'])->name('welcome');
 Route::get('/index2' , [HomeController::class, 'index']);
 Route::get('/profile',[ProfileController2::class, 'index']);
+
+//timeline
+Route::get('/UI/timeline.blade.php',[TimelineController::class, 'index']);
+
 
 Auth::routes();
 
