@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <!-- Bootstrap icons -->
@@ -158,8 +159,10 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
+    <a href="/welcome" class="brand-link">
+      <img src="../img/lab4.png" alt="LabSIV Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
     <a href="../index2.blade.php" class="brand-link">
-      <img src="/img/lab4.png" alt="LabSIV Logo" class="brand-image img-circle elevation-3" style="opacity: .8; font-size:x-large;">
+      <img src="../img/lab4.png" alt="LabSIV Logo" class="brand-image img-circle elevation-3" style="opacity: .8; font-size:x-large;">
       <span class="brand-text font-weight-light">LabSIV</span>
     </a>
     <!-- Sidebar -->
@@ -167,10 +170,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-1 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{$user->prenom}} {{$user->name}}</a>
+          <a href="profile.blade.php" class="d-block">{{$user->name}}</a>
         </div>
       </div>
 
@@ -180,7 +183,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="/index2" class="nav-link active">
+            <a href="./index2" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -188,24 +191,31 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../UI/timeline.blade.php" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+            <a href="profile" class="nav-link">
+              <i class="far fa-user nav-icon"></i>
+              <p>
+                Profile
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="timeline" class="nav-link">
+              <i class="nav-icon fas fa-timeline"></i>
               <p>
                 Timeline
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="../calendar.blade.php" class="nav-link">
+            <a href="calendar" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
                 Calendar
-                <span class="badge badge-info right">2</span>
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="../gallery.blade.php" class="nav-link">
+            <a href="gallery" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Gallery
@@ -213,7 +223,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../kanban.blade.php" class="nav-link">
+            <a href="kanban" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Kanban Board
@@ -230,32 +240,24 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../mailbox/mailbox.blade.php" class="nav-link">
+                <a href="mailbox.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inbox</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../mailbox/compose.blade.php" class="nav-link">
+                <a href="compose.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Compose</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../mailbox/read-mail.blade.php" class="nav-link">
+                <a href="read-mail.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Read</p>
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a href="./profile.blade.php" class="nav-link">
-              <i class="far fa-user nav-icon"></i>
-              <p>
-                Profile
-              </p>
-            </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -266,25 +268,25 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./projects.blade.php" class="nav-link">
+                <a href="projects.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>All</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./project-add.blade.php" class="nav-link">
+                <a href="project-add.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Project</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./project-edit.blade.php" class="nav-link">
+                <a href="project-edit.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Edit Project</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./project-detail.blade.php" class="nav-link">
+                <a href="project-detail.blade.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Project Details</p>
                 </a>
@@ -292,17 +294,55 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/contacts.blade.php" class="nav-link">
+            <a href="#" class="nav-link">
+              <i class="fas fa-users nav-icon"></i>
+              <p>Teams
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="projects.blade.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="project-add.blade.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Team</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="project-edit.blade.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Edit Team</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="contacts.blade.php" class="nav-link">
               <i class="far fa-address-book nav-icon"></i>
               <p>Contacts</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="./contact-us.blade.php" class="nav-link">
+            <a href="contact-us.blade.php" class="nav-link">
               <i class="far fa-address-card nav-icon"></i>
               <p>Contact us</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ route('logout') }}"onclick="event.preventDefault();
+             document.getElementById('logout-form').submit();" class="nav-link">
+              <i class="fas fa-arrow-right-from-bracket nav-icon"></i>
+              <p>Logout</p>
+            </a>
+          </li>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+              </form>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -647,13 +687,6 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
-  <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
-    </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
