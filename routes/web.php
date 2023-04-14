@@ -9,7 +9,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TimelineController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\TimelineController;
 
 /*
 |--------------------------------------------------------------------------
