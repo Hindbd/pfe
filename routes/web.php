@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\addProjectController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfileController2;
 use App\Http\Controllers\pubscontroller;
@@ -9,6 +10,12 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TimelineController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\ComposeController;
+use App\Http\Controllers\galleryController;
+use App\Http\Controllers\InboxController;
+use App\Http\Controllers\kanbanController;
+use App\Http\Controllers\projectsController;
+use App\Http\Controllers\readController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +45,14 @@ Route::get('/index2' , [HomeController::class, 'index']);
 Route::get('/profile',[ProfileController2::class, 'index']);
 Route::get('/timeline',[TimelineController::class, 'index']);
 Route::get('/calendar',[CalendarController::class, 'index']);
+Route::get('/gallery',[galleryController::class, 'index']);
+Route::get('/kanban',[kanbanController::class, 'index']);
+Route::get('/mailbox',[InboxController::class, 'index']);
+Route::get('/compose',[ComposeController::class, 'index']);
+Route::get('/read-mail',[readController::class, 'index']);
+Route::get('/projects',[projectsController::class, 'index']);
+Route::get('/project-add',[addProjectController::class, 'index']);
+
 
 Auth::routes();
 
@@ -59,5 +74,7 @@ Route::get('register', [RegisteredUserController::class, 'create'])->name('regis
 Route::middleware('auth')->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/enseignant/dashboard', [EnseignantController::class, 'index'])->name('enseignant.dashboard');
-    Route::get('/membre/dashboard', [MembreController::class, 'index'])->name('membre.destroy');
+    Route::get('/membre/dashboard', [MembreController::class, 'index'])->name('membre.dashboard');
 });
+//project routes 
+Route::post('projects', [projectsController::class, 'store'])->name('projects');

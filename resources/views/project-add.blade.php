@@ -382,36 +382,36 @@
               </div>
             </div>
             <div class="card-body">
+              <form method="POST" action="{{ route('projects') }}">
+              @csrf
               <div class="form-group">
                 <label for="inputName">Project Name</label>
-                <input type="text" id="inputName" class="form-control">
+                <input type="text" id="inputName" class="form-control" name="prjName">
               </div>
               <div class="form-group">
                 <label for="inputDescription">Project Description</label>
-                <textarea id="inputDescription" class="form-control" rows="4"></textarea>
+                <textarea id="inputDescription" class="form-control" rows="4" name="prjDescription"></textarea>
               </div>
               <div class="form-group">
-                <label for="inputStatus">Status</label>
-                <select id="inputStatus" class="form-control custom-select">
-                  <option selected disabled>Select one</option>
-                  <option>On Hold</option>
-                  <option>Canceled</option>
-                  <option>Success</option>
-                </select>
+              <select  name="respoPrj">
+                <option value="1">1</option>
+                <option value="2">2</option>           
+              </select>
+              </div>
+              
+            <div class="form-group">
+                <label for="inputDateDebut">Date de debut</label>
+                <input id="inputDateDebut" class="form-control" rows="4" placeholder="YY/MM/DD" name="inputDateDebut"></input>
               </div>
               <div class="form-group">
-                <label for="inputClientCompany">Client Company</label>
-                <input type="text" id="inputClientCompany" class="form-control">
+                <label for="inputDateFin">Date de fin</label>
+                <input id="inputDateFin" class="form-control" rows="4" placeholder="YY/MM/DD" name=""></input>
               </div>
-              <div class="form-group">
-                <label for="inputProjectLeader">Project Leader</label>
-                <input type="text" id="inputProjectLeader" class="form-control">
-              </div>
-            </div>
+              </form>
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
-        </div>
+        <!-- </div>
         <div class="col-md-6">
           <div class="card card-secondary">
             <div class="card-header">
@@ -436,7 +436,7 @@
                 <label for="inputEstimatedDuration">Estimated project duration</label>
                 <input type="number" id="inputEstimatedDuration" class="form-control">
               </div>
-            </div>
+            </div> -->
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
@@ -445,7 +445,10 @@
       <div class="row">
         <div class="col-12">
           <a href="#" class="btn btn-secondary">Cancel</a>
-          <input type="submit" value="Create new Project" class="btn btn-success float-right">
+          <!-- <input type="submit" value="Create new Project" class="btn btn-success float-right"> -->
+          <button type="submit" class="btn btn-primary">
+                                    {{ __('Create project') }}
+                                </button>
         </div>
       </div>
     </section>

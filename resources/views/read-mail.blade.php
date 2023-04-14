@@ -241,9 +241,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="compose" class="nav-link">
+                <a href="Read" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Compose</p>
+                  <p>Read</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -352,12 +352,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Compose</h1>
+            <h1>Read</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Compose</li>
+              <li class="breadcrumb-item active">Read</li>
             </ol>
           </div>
         </div>
