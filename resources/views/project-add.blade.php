@@ -14,6 +14,18 @@
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <!-- Bootstrap icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+  <style>
+    .sidebar {
+      height: calc(100vh - 50px); /* set height to 100% viewport height minus height of the header */
+      overflow-y: scroll; /* add vertical scroll */
+      top: 60px; /* align it below the header */
+      left: 0; /* align it to the left */
+      width: 250px; /* set the width */
+    }
+    /* .brand-link {
+      position: fixed;
+    } */
+  </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -300,7 +312,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="projects" class="nav-link">
+                <a href="teams" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>All</p>
                 </a>
@@ -323,12 +335,6 @@
             <a href="contacts" class="nav-link">
               <i class="far fa-address-book nav-icon"></i>
               <p>Contacts</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="contact-us" class="nav-link">
-              <i class="far fa-address-card nav-icon"></i>
-              <p>Contact us</p>
             </a>
           </li>
           <li class="nav-item">
@@ -370,7 +376,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <div class="card card-primary">
             <div class="card-header">
               <h3 class="card-title">General</h3>
@@ -450,7 +456,14 @@
           <!-- /.card -->
         </div>
       </div>
-
+      <div class="row">
+        <div class="col-12">
+          <a href="#" class="btn btn-secondary">Cancel</a>
+          <!-- <input type="submit" value="Create new Project" class="btn btn-success float-right"> -->
+          <button type="submit" class="btn btn-primary">
+            {{ __('Create project') }}
+          </button>
+        </div>
       </div>
     </section>
     <!-- /.content -->

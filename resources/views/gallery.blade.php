@@ -16,6 +16,18 @@
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
   <!-- Bootstrap icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+  <style>
+    .sidebar {
+      height: calc(100vh - 50px); /* set height to 100% viewport height minus height of the header */
+      overflow-y: scroll; /* add vertical scroll */
+      top: 60px; /* align it below the header */
+      left: 0; /* align it to the left */
+      width: 250px; /* set the width */
+    }
+    /* .brand-link {
+      position: fixed;
+    } */
+  </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -324,12 +336,6 @@
             <a href="contacts" class="nav-link">
               <i class="far fa-address-book nav-icon"></i>
               <p>Contacts</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="contact-us" class="nav-link">
-              <i class="far fa-address-card nav-icon"></i>
-              <p>Contact us</p>
             </a>
           </li>
           <li class="nav-item">

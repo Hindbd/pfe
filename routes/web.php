@@ -16,6 +16,8 @@ use App\Http\Controllers\InboxController;
 use App\Http\Controllers\kanbanController;
 use App\Http\Controllers\projectsController;
 use App\Http\Controllers\readController;
+use App\Http\Controllers\TeamsController;
+use App\Http\Controllers\ContactsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +53,9 @@ Route::get('/mailbox',[InboxController::class, 'index']);
 Route::get('/compose',[ComposeController::class, 'index']);
 Route::get('/read-mail',[readController::class, 'index']);
 Route::get('/projects',[projectsController::class, 'index']);
+Route::get('/project-add',[addProjectController::class, 'index']);
+Route::get('/teams',[TeamsController::class, 'index']);
+Route::get('/contacts',[ContactsController::class, 'index']);
 
 
 Auth::routes();

@@ -9,10 +9,25 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <!-- Bootstrap icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <style>
+    .sidebar {
+      height: calc(100vh - 50px); /* set height to 100% viewport height minus height of the header */
+      overflow-y: scroll; /* add vertical scroll */
+      top: 60px; /* align it below the header */
+      left: 0; /* align it to the left */
+      width: 250px; /* set the width */
+    }
+    /* .brand-link {
+      position: fixed;
+    } */
+  </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -204,7 +219,6 @@
           </li>
           <li class="nav-item">
             <a href="calendar" class="nav-link">
-            <a href="calendar" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
                 Calendar
@@ -325,12 +339,6 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="contact-us" class="nav-link">
-              <i class="far fa-address-card nav-icon"></i>
-              <p>Contact us</p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="{{ route('logout') }}"onclick="event.preventDefault();
              document.getElementById('logout-form').submit();" class="nav-link">
               <i class="fas fa-arrow-right-from-bracket nav-icon"></i>
@@ -381,23 +389,18 @@
                        alt="User profile picture">
                 </div>
 
-                <h3 class="profile-username text-center">Nina Mcintire</h3>
+                <h3 class="profile-username text-center">{{$user->prenom}} {{$user->name}}</h3>
 
-                <p class="text-muted text-center">Software Engineer</p>
+                <p class="text-muted text-center">{{$user->role}}</p>
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b>Followers</b> <a class="float-right">1,322</a>
+                    <b>Encadrant</b> <a class="float-right">{{$user->encadrant}}</a>
                   </li>
-                  <li class="list-group-item">
-                    <b>Following</b> <a class="float-right">543</a>
-                  </li>
-                  <li class="list-group-item">
+                  <!-- <li class="list-group-item">
                     <b>Friends</b> <a class="float-right">13,287</a>
-                  </li>
+                  </li> -->
                 </ul>
-
-                <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
               </div>
               <!-- /.card-body -->
             </div>
@@ -411,34 +414,21 @@
               <!-- /.card-header -->
               <div class="card-body">
                 <strong><i class="fas fa-book mr-1"></i> Education</strong>
-
                 <p class="text-muted">
-                  B.S. in Computer Science from the University of Tennessee at Knoxville
+                  <span id="education-value"></span>
                 </p>
-
                 <hr>
 
-                <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
-
-                <p class="text-muted">Malibu, California</p>
-
+                <strong><i class="fas fa-map-marker-alt mr-1"></i> Experience</strong>
+                <p class="text-muted">
+                  <span id="experience-value"></span>
+                </p>
                 <hr>
 
                 <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
-
                 <p class="text-muted">
-                  <span class="tag tag-danger">UI Design</span>
-                  <span class="tag tag-success">Coding</span>
-                  <span class="tag tag-info">Javascript</span>
-                  <span class="tag tag-warning">PHP</span>
-                  <span class="tag tag-primary">Node.js</span>
+                  <span id="skills-value"></span>
                 </p>
-
-                <hr>
-
-                <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
-
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
               </div>
               <!-- /.card-body -->
             </div>
@@ -452,10 +442,12 @@
                   <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a></li>
                   <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Timeline</a></li>
                   <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">To-Do</a></li>
                 </ul>
               </div><!-- /.card-header -->
               <div class="card-body">
                 <div class="tab-content">
+                  <!-- Activity tab -->
                   <div class="active tab-pane" id="activity">
                     <!-- Post -->
                     <div class="post">
@@ -570,6 +562,7 @@
                     <!-- /.post -->
                   </div>
                   <!-- /.tab-pane -->
+                  <!-- Timeline tab -->
                   <div class="tab-pane" id="timeline">
                     <!-- The timeline -->
                     <div class="timeline timeline-inverse">
@@ -665,13 +658,13 @@
                     </div>
                   </div>
                   <!-- /.tab-pane -->
-
+                  <!-- Settings tab -->
                   <div class="tab-pane" id="settings">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" id="form1">
                       <div class="form-group row">
-                        <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                        <label for="inputName" class="col-sm-2 col-form-label">Full Name</label>
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputName" placeholder="Name">
+                          <input type="text" class="form-control" id="inputName" placeholder="Name">
                         </div>
                       </div>
                       <div class="form-group row">
@@ -681,9 +674,9 @@
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="inputName2" class="col-sm-2 col-form-label">Name</label>
+                        <label for="inputEducation" class="col-sm-2 col-form-label">Education</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName2" placeholder="Name">
+                          <input type="text" class="form-control" id="inputEducation" placeholder="Education">
                         </div>
                       </div>
                       <div class="form-group row">
@@ -729,12 +722,6 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
-    </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -752,5 +739,21 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
+<script>
+  const form = document.getElementById('form1');
+  const education = document.getElementById('inputEducation');
+  const educationValue = document.getElementById('education-value');
+  const experience = document.getElementById('inputExperience');
+  const experienceValue = document.getElementById('experience-value');
+  const skills = document.getElementById('inputSkills');
+  const skillsValue = document.getElementById('skills-value');
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault(); // prevent form submission
+    educationValue.textContent = inputEducation.value;
+    experienceValue.textContent = inputExperience.value;
+    skillsValue.textContent = inputSkills.value;
+  });
+</script>
 </body>
 </html>
