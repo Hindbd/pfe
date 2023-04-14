@@ -39,14 +39,6 @@ Route::get('/profile',[ProfileController2::class, 'index']);
 Route::get('/timeline',[TimelineController::class, 'index']);
 Route::get('/calendar',[CalendarController::class, 'index']);
 
-//timeline
-Route::get('/UI/timeline.blade.php',[TimelineController::class, 'index']);
-
-
-Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index2'])->name('home');
-
 Auth::routes();
 
 Route::get('/Recherche',function(){

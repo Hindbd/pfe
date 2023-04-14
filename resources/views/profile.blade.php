@@ -204,6 +204,7 @@
           </li>
           <li class="nav-item">
             <a href="calendar" class="nav-link">
+            <a href="calendar" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
                 Calendar
