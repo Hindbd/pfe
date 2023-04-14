@@ -6,6 +6,8 @@ use App\Http\Controllers\pubscontroller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TimelineController;
+use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
 
@@ -36,6 +38,8 @@ require __DIR__.'/auth.php';
 Route::get('/' , [pubscontroller::class, 'index'])->name('welcome');
 Route::get('/index2' , [HomeController::class, 'index']);
 Route::get('/profile',[ProfileController2::class, 'index']);
+Route::get('/timeline',[TimelineController::class, 'index']);
+Route::get('/calendar',[CalendarController::class, 'index']);
 
 Auth::routes();
 
@@ -53,11 +57,10 @@ Route::get('/Publications',function(){
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('register', [RegisteredUserController::class, 'create'])
-                 ->name('register');
+Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
 // roles 
 Route::middleware('auth')->group(function () {
-    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dasghboard');
-    Route::get('/enseignat/dashboard', [EnseignantController::class, 'index'])->name('enseignant.dashboard');
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('/enseignant/dashboard', [EnseignantController::class, 'index'])->name('enseignant.dashboard');
     Route::get('/membre/dashboard', [MembreController::class, 'index'])->name('membre.destroy');
 });
