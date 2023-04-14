@@ -247,19 +247,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="mailbox.blade.php" class="nav-link">
+                <a href="mailbox" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inbox</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="compose.blade.php" class="nav-link">
+                <a href="compose" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Compose</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="read-mail.blade.php" class="nav-link">
+                <a href="read-mail" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Read</p>
                 </a>
@@ -275,25 +275,25 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="projects.blade.php" class="nav-link">
+                <a href="projects" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>All</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="project-add.blade.php" class="nav-link">
+                <a href="project-add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Project</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="project-edit.blade.php" class="nav-link">
+                <a href="project-edit" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Edit Project</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="project-detail.blade.php" class="nav-link">
+                <a href="project-detail" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Project Details</p>
                 </a>
@@ -309,19 +309,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="projects.blade.php" class="nav-link">
+                <a href="projects" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>All</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="project-add.blade.php" class="nav-link">
+                <a href="project-add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Team</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="project-edit.blade.php" class="nav-link">
+                <a href="project-edit" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Edit Team</p>
                 </a>
@@ -329,13 +329,13 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="contacts.blade.php" class="nav-link">
+            <a href="contacts" class="nav-link">
               <i class="far fa-address-book nav-icon"></i>
               <p>Contacts</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="contact-us.blade.php" class="nav-link">
+            <a href="contact-us" class="nav-link">
               <i class="far fa-address-card nav-icon"></i>
               <p>Contact us</p>
             </a>
