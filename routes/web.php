@@ -51,7 +51,6 @@ Route::get('/mailbox',[InboxController::class, 'index']);
 Route::get('/compose',[ComposeController::class, 'index']);
 Route::get('/read-mail',[readController::class, 'index']);
 Route::get('/projects',[projectsController::class, 'index']);
-Route::get('/project-add',[addProjectController::class, 'index']);
 
 
 Auth::routes();
@@ -77,4 +76,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/membre/dashboard', [MembreController::class, 'index'])->name('membre.dashboard');
 });
 //project routes 
-Route::post('projects', [projectsController::class, 'store'])->name('projects');
+Route::get('/project-add',[addProjectController::class, 'index']);
+Route::post('/project-add', [addProjectController::class, 'store'])->name('project-ajout');

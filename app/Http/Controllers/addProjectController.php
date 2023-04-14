@@ -24,15 +24,16 @@ public function store(Request $request): RedirectResponse
         'inputDateFin'=>['required', 'date'],
     ]);
 
-    $user = Project::create([
-        'prjName' => $request->nom,
-        'prjDescription' => $request->description,
-        'inputDateDebut'=>$request->date_debut,
-        'inputDateFin'=>$request->date_fin
+    $prj = Project::create([
+        'nom' => $request->prjName,
+        'description' => $request->prjDescription,
+        'responsable_prj'=> $request->respoPrj,
+        'date_debut'=>$request->inputDateDebut,
+        'date_fin'=>$request->inputDateFin
     ]);
 
 
 
-    return redirect('projects');
+    return redirect('index2');
 }
 }
