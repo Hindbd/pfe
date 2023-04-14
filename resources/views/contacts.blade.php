@@ -160,10 +160,8 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/welcome" class="brand-link">
-      <img src="../img/lab4.png" alt="LabSIV Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-    <a href="../index2.blade.php" class="brand-link">
       <img src="../img/lab4.png" alt="LabSIV Logo" class="brand-image img-circle elevation-3" style="opacity: .8; font-size:x-large;">
-      <span class="brand-text font-weight-light">LabSIV</span>
+      <span class="brand-text font-weight-semibold">LabSIV</span>
     </a>
     <!-- Sidebar -->
     <div class="sidebar">

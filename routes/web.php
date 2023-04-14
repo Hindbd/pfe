@@ -57,6 +57,9 @@ Route::get('/Publications',function(){
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
 // roles 
 Route::middleware('auth')->group(function () {
