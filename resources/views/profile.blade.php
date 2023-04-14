@@ -187,7 +187,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../UI/timeline.blade.php" class="nav-link">
+            <a href="timeline" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 Timeline
@@ -195,7 +195,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../calendar.blade.php" class="nav-link">
+            <a href="calendar" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
                 Calendar
@@ -204,7 +204,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../gallery.blade.php" class="nav-link">
+            <a href="gallery" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Gallery
@@ -212,7 +212,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../kanban.blade.php" class="nav-link">
+            <a href="kanban" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Kanban Board

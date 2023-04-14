@@ -9,7 +9,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TimelineController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\TimelineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,14 +38,6 @@ Route::get('/index2' , [HomeController::class, 'index']);
 Route::get('/profile',[ProfileController2::class, 'index']);
 Route::get('/timeline',[TimelineController::class, 'index']);
 Route::get('/calendar',[CalendarController::class, 'index']);
-
-//timeline
-Route::get('/UI/timeline.blade.php',[TimelineController::class, 'index']);
-
-
-Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index2'])->name('home');
 
 Auth::routes();
 
